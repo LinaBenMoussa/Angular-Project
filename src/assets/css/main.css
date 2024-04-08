@@ -10966,7 +10966,7 @@ fieldset:disabled .btn {
 
 .bg-primary {
   --vacasky-bg-opacity: 1;
-  background-color: rgba(var(--vacasky-primary-rgb), var(--vacasky-bg-opacity)) ;
+  background-color: rgba(var(--vacasky-primary-rgb), var(--vacasky-bg-opacity)) !important; ;
 }
 
 .bg-secondary {
@@ -18415,7 +18415,7 @@ a:hover .text-soft-dark {
 /*------------------------------
 | Font Customization
 --------------------------------*/
-.header {
+.header-admin {
   position: relative;
   left: 0;
   top: 0;
@@ -18423,9 +18423,10 @@ a:hover .text-soft-dark {
   background-color: #ffffff;
   padding: 1.5625rem 3.125rem;
   z-index: 9;
+  width: 100% !important;  
 }
 
-.forFixedNav .header {
+.forFixedNav .header-admin {
   position: fixed;
   left: 0;
   top: 0;
@@ -18446,16 +18447,16 @@ a:hover .text-soft-dark {
   transform-origin: top;
 }
 
-.header .logo {
+.header-admin .logo {
   position: relative;
   flex-shrink: 0;
 }
 
-.header .logo a {
+.header-admin .logo a {
   display: inline-block;
 }
 
-.header .logo a img {
+.header-admin .logo a img {
   width: 100%;
   max-width: 120px;
 }
@@ -18723,13 +18724,14 @@ a:hover .text-soft-dark {
 }
 
 /* Header Search */
-.header .search-form .form-control {
+.header-admin .search-form .form-control {
   box-shadow: none;
 }
 
 .search-form {
   position: relative;
-  width: 100%;
+  left: 300px;
+  width: 80%;
   max-width: 100%;
 }
 
@@ -21783,7 +21785,7 @@ table.defaultTable td .badge i {
   display: none;
 }
 
-.layout-horizontal-nav .header {
+.layout-horizontal-nav .header-admin {
   margin-left: 0px;
 }
 
@@ -21808,7 +21810,7 @@ table.defaultTable td .badge i {
   display: none;
 }
 
-.layout-combo-nav .header {
+.layout-combo-nav .header-admin {
   margin-left: 0px;
 }
 
@@ -21950,7 +21952,7 @@ table.defaultTable td .badge i {
 }
 
 @media screen and (max-width: 1199.98px) {
-  .header {
+  .header-admin {
     padding: 0.625rem 3.125rem;
   }
   .header,
@@ -22634,11 +22636,11 @@ h5.negative-margin, .negative-margin.h5 {
   background-color: #F5F5F5;
 }
 
-.header .dropdown-menu {
+.header-admin .dropdown-menu {
   overflow: visible;
 }
 
-.header .dropdown-menu::after {
+.header-admin .dropdown-menu::after {
   content: "";
   position: absolute;
   z-index: 0;
@@ -23126,7 +23128,7 @@ h5.negative-margin, .negative-margin.h5 {
 
 :root .dark-mode .dropdown-widget.dropdown-menu,
 :root .dark-mode .admin-card.dropdown-widget.dropdown-menu .card,
-:root .dark-mode .header .dropdown-menu::after,
+:root .dark-mode .header-admin .dropdown-menu::after,
 :root .dark-mode ::-webkit-scrollbar {
   background: #0D0B21;
 }
@@ -23156,7 +23158,7 @@ h5.negative-margin, .negative-margin.h5 {
 :root .dark-mode .tox-tinymce,
 :root .dark-mode .tox:not(.tox-tinymce-inline).tox-tinymce--toolbar-bottom .tox-editor-header,
 :root .dark-mode.vacasky-vertical-nav--collapse .vacasky-vertical-nav .menu-section-title,
-:root .dark-mode .header .dropdown-menu::after {
+:root .dark-mode .header-admin .dropdown-menu::after {
   border-color: #1D1B33;
 }
 
