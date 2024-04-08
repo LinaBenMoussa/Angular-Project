@@ -8,7 +8,16 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+=======
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+
+import { NavbarComponent } from './admin/layout/navbar/navbar.component';
+import { MeunComponent } from './admin/layout/meun/meun.component';
+import { ListehotelComponent } from './admin/listehotel/listehotel.component';
+
+>>>>>>> 4b82fa5a033caeef93d4ebec25cd34c7734f31f2
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +26,11 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     HotelsComponent,
     HotelDetailsComponent,
+    DashboardComponent,
+    NavbarComponent,
+    MeunComponent,
+    ListehotelComponent,
+
   ],
   imports: [
     BrowserModule,
