@@ -8,7 +8,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,7 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
