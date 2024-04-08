@@ -8,6 +8,11 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+
+import { NavbarComponent } from './admin/layout/navbar/navbar.component';
+import { MeunComponent } from './admin/layout/meun/meun.component';
+import { ListehotelComponent } from './admin/listehotel/listehotel.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
     HomeComponent,
     HotelsComponent,
     HotelDetailsComponent,
+    DashboardComponent,
+    NavbarComponent,
+    MeunComponent,
+    ListehotelComponent,
+
   ],
   imports: [
     BrowserModule,
