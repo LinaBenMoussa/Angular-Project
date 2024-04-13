@@ -197,7 +197,7 @@
 }
 
 .banner-one_form-box .travel-form{
-	padding-right: 160px;
+	padding-right: 15px;
 }
 
 .banner-one_form-box .travel-form .button-box{
@@ -230,7 +230,7 @@
 	padding-right: var(--padding-right-40);
 }
 
-.travel-form .form-group .form-group_inner::before{
+/* .travel-form .form-group .form-group_inner::before{
 	position: absolute;
 	content: '';
 	right: -10px;
@@ -239,7 +239,7 @@
 	bottom: 10px;
 	opacity: 0.10;
 	background-color: var(--black-color);
-}
+} */
 
 .travel-form .form-group:last-child .form-group_inner::before{
 	display: none;

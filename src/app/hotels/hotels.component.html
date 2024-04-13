@@ -32,269 +32,265 @@
 			</ul>
 			<h1 class="page-banner_title">hotels</h1>
 		</div>
+		<section class="booking-two">
+			<div class="auto-container">
+				
+	<br><br>	<br><br>
+
+					<!-- Booking Form -->
+					<div class="banner-one_form-box">
+						<!-- Travel Form -->
+						<div class="travel-form">
+							<form method="post" action="#">
+								<div class="row clearfix">
+									
+									<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+										<div class="form-group_inner">
+											<label>Destination</label>
+											<select class="select-location" required="">
+												<option value="0">NewYork, USA</option>
+												<option value="1">Paris, France</option>
+												<option value="2">London, UK</option>
+												<option value="3">Jakarta, Indonesia</option>
+											</select>
+										</div>
+									</div>
+									
+									
+									
+									<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+										<div class="form-group_inner">
+											<label>Price</label>
+											<input type="text" name="text" placeholder="$1,000 - $2,000" value="$1,000 - $2,000" required="">
+								</div>
+							</div>
+	
+							<!-- Filter -->
+							<button class="btn-style-two theme-btn">
+								<span class="btn-wrap">
+									<span class="text-one">Search</span>
+									<span class="text-two">Search</span>
+								</span>
+							</button>
+							<div id="collapseFilter" class="collapse">
+								<div class="card search-filter mt-3 mb-5 p-3">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Search Hotel</h6>
+													<div class="filter-search">
+														<div class="form-group">
+															<input type="search" name="search-field" value="" placeholder="Search..." required>
+															<button type="submit"><span class="icon fa fa-search"></span></button>
+														</div>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Hotel Type</h6>
+													<div class="filter-hotel">
+														<select class="select-default w-100 border border-1 border-opacity-10">
+															<option></option>
+															<option value="1">Boutique Hotel</option>
+															<option value="2">Eco Hotel</option>
+															<option value="3">Capsule Hotel</option>
+															<option value="4">Bed & Breakfast Hotel</option>
+															<option value="5">Condo Hotel</option>
+														</select>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Custom Price Range</h6>
+													<div class="filter-price-range">
+														<div id="slider-range" class="price-filter-range" name="rangeInput"></div>
+	
+														<div class="value_field d-flex align-items-center justify-content-between mt-2">
+														<input type="number" min=10 max="2090" id="min_price" class="text-start bg-transparent" disabled readonly>
+														<input type="number" min=15 max="2100" id="max_price" class="text-end bg-transparent" disabled readonly>
+														</div>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Style</h6>
+													<div class="filter-style">
+														<form action="#" method="post">
+															<div class="form-check">
+																<label for="checkbox1">Luxury</label>
+																<input type="checkbox" class="form-check-input" name="checkbox1" value="">
+																<span class="content_count">12</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox2">Suite</label>
+																<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
+																<span class="content_count">09</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox3">Mid-Range</label>
+																<input type="checkbox" class="form-check-input" name="checkbox3" value="">
+																<span class="content_count">18</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox4">Business</label>
+																<input type="checkbox" class="form-check-input" name="checkbox4" value="">
+																<span class="content_count">28</span>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Category</h6>
+													<div class="filter-category">
+														<form action="#" method="post">
+															<div class="form-check">
+																<label for="checkbox1">Motel</label>
+																<input type="checkbox" class="form-check-input" name="checkbox1" value="">
+																<span class="content_count">26</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox2">Resort</label>
+																<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
+																<span class="content_count">18</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox3">Banglow</label>
+																<input type="checkbox" class="form-check-input" name="checkbox3" value="">
+																<span class="content_count">15</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox4">Suite</label>
+																<input type="checkbox" class="form-check-input" name="checkbox4" value="">
+																<span class="content_count">32</span>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Amenities</h6>
+													<div class="filter-amenities">
+														<form action="#" method="post">
+															<div class="form-check">
+																<label for="checkbox1">Breakfast Included</label>
+																<input type="checkbox" class="form-check-input" name="checkbox1" value="">
+																<span class="content_count">26</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox2">Swiming Pool</label>
+																<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
+																<span class="content_count">18</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox3">Free Wifi</label>
+																<input type="checkbox" class="form-check-input" name="checkbox3" value="">
+																<span class="content_count">15</span>
+															</div>
+															<div class="form-check">
+																<label for="checkbox4">Air Condition</label>
+																<input type="checkbox" class="form-check-input" name="checkbox4" value="">
+																<span class="content_count">32</span>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Star Type</h6>
+													<div class="filter-rating">
+														<form action="#" method="post">
+															<div class="row m-0">
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox1" value="">
+																	<label for="checkbox1" class="btn">5 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox2" value="">
+																	<label for="checkbox2" class="btn">4 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox3" value="">
+																	<label for="checkbox3" class="btn">3 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox4" value="">
+																	<label for="checkbox4" class="btn">2 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 p-0">
+																	<input type="checkbox" class="btn-check" name="checkbox5" value="">
+																	<label for="checkbox5" class="btn">1 <i class="fa fa-star"></i></label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+	
+											<div class="col-lg-4 col-md-4">
+												<div class="widget">
+													<h6 class="widget-title">Guest Rating</h6>
+													<div class="filter-rating">
+														<form action="#" method="post">
+															<div class="row m-0">
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox1" value="">
+																	<label for="checkbox1" class="btn">4.5+ <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox2" value="">
+																	<label for="checkbox2" class="btn">4 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox3" value="">
+																	<label for="checkbox3" class="btn">3.5 <i class="fa fa-star"></i></label>
+																</div>
+																<div class="form-check col-auto p-0 pe-1">
+																	<input type="checkbox" class="btn-check" name="checkbox4" value="">
+																	<label for="checkbox4" class="btn">3 <i class="fa fa-star"></i></label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Button Box -->
+								<div class="button-box">
+									<button class="btn-style-two theme-btn">
+										<span class="btn-wrap">
+											<span class="text-one">Search</span>
+											<span class="text-two">Search</span>
+										</span>
+									</button>
+								</div></div></div>
+							</form>
+						</div>
+						<!-- End Travel Form -->
+					</div>
+				</div>
+			
+		</section>
 	</section>
 	<!-- End Page Banner -->
 
 	<!-- Booking Two -->
-	<section class="booking-two">
-		<div class="auto-container">
-			
-
-				<!-- Booking Form -->
-				<div class="banner-one_form-box">
-					<!-- Travel Form -->
-					<div class="travel-form">
-						<form method="post" action="#">
-							<div class="row clearfix">
-								
-								<div class="col-lg-4 col-md-6 col-sm-6 form-group">
-									<div class="form-group_inner">
-										<label>Destination</label>
-										<select class="select-location" required="">
-											<option value="0">NewYork, USA</option>
-											<option value="1">Paris, France</option>
-											<option value="2">London, UK</option>
-											<option value="3">Jakarta, Indonesia</option>
-										</select>
-									</div>
-								</div>
-								
-								<div class="col-lg-4 col-md-6 col-sm-6 form-group">
-									<div class="form-group_inner">
-										<label>Date</label>
-										<input class="flatpickr" type="text" name="calendar" placeholder="Select Date">
-									</div>
-								</div>
-								
-								<div class="col-lg-4 col-md-6 col-sm-6 form-group">
-									<div class="form-group_inner">
-										<label>Price</label>
-										<input type="text" name="text" placeholder="$1,000 - $2,000" value="$1,000 - $2,000" required="">
-							</div>
-						</div>
-
-						<!-- Filter -->
-						<div class="projects-one_filters mb-0">
-							<ul class="filter-tabs">
-								<li class="collapse-btn w-100 m-0" data-bs-toggle="collapse" data-bs-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
-									Advanced Serch
-								</li>
-							</ul>
-						</div>
-						<div id="collapseFilter" class="collapse">
-							<div class="card search-filter mt-3 mb-5 p-3">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Search Hotel</h6>
-												<div class="filter-search">
-													<div class="form-group">
-														<input type="search" name="search-field" value="" placeholder="Search..." required>
-														<button type="submit"><span class="icon fa fa-search"></span></button>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Hotel Type</h6>
-												<div class="filter-hotel">
-													<select class="select-default w-100 border border-1 border-opacity-10">
-														<option></option>
-														<option value="1">Boutique Hotel</option>
-														<option value="2">Eco Hotel</option>
-														<option value="3">Capsule Hotel</option>
-														<option value="4">Bed & Breakfast Hotel</option>
-														<option value="5">Condo Hotel</option>
-													</select>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Custom Price Range</h6>
-												<div class="filter-price-range">
-													<div id="slider-range" class="price-filter-range" name="rangeInput"></div>
-
-													<div class="value_field d-flex align-items-center justify-content-between mt-2">
-													<input type="number" min=10 max="2090" id="min_price" class="text-start bg-transparent" disabled readonly>
-													<input type="number" min=15 max="2100" id="max_price" class="text-end bg-transparent" disabled readonly>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Style</h6>
-												<div class="filter-style">
-													<form action="#" method="post">
-														<div class="form-check">
-															<label for="checkbox1">Luxury</label>
-															<input type="checkbox" class="form-check-input" name="checkbox1" value="">
-															<span class="content_count">12</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox2">Suite</label>
-															<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
-															<span class="content_count">09</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox3">Mid-Range</label>
-															<input type="checkbox" class="form-check-input" name="checkbox3" value="">
-															<span class="content_count">18</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox4">Business</label>
-															<input type="checkbox" class="form-check-input" name="checkbox4" value="">
-															<span class="content_count">28</span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Category</h6>
-												<div class="filter-category">
-													<form action="#" method="post">
-														<div class="form-check">
-															<label for="checkbox1">Motel</label>
-															<input type="checkbox" class="form-check-input" name="checkbox1" value="">
-															<span class="content_count">26</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox2">Resort</label>
-															<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
-															<span class="content_count">18</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox3">Banglow</label>
-															<input type="checkbox" class="form-check-input" name="checkbox3" value="">
-															<span class="content_count">15</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox4">Suite</label>
-															<input type="checkbox" class="form-check-input" name="checkbox4" value="">
-															<span class="content_count">32</span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Amenities</h6>
-												<div class="filter-amenities">
-													<form action="#" method="post">
-														<div class="form-check">
-															<label for="checkbox1">Breakfast Included</label>
-															<input type="checkbox" class="form-check-input" name="checkbox1" value="">
-															<span class="content_count">26</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox2">Swiming Pool</label>
-															<input type="checkbox" class="form-check-input" name="checkbox2" checked value="">
-															<span class="content_count">18</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox3">Free Wifi</label>
-															<input type="checkbox" class="form-check-input" name="checkbox3" value="">
-															<span class="content_count">15</span>
-														</div>
-														<div class="form-check">
-															<label for="checkbox4">Air Condition</label>
-															<input type="checkbox" class="form-check-input" name="checkbox4" value="">
-															<span class="content_count">32</span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Star Type</h6>
-												<div class="filter-rating">
-													<form action="#" method="post">
-														<div class="row m-0">
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox1" value="">
-																<label for="checkbox1" class="btn">5 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox2" value="">
-																<label for="checkbox2" class="btn">4 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox3" value="">
-																<label for="checkbox3" class="btn">3 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox4" value="">
-																<label for="checkbox4" class="btn">2 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 p-0">
-																<input type="checkbox" class="btn-check" name="checkbox5" value="">
-																<label for="checkbox5" class="btn">1 <i class="fa fa-star"></i></label>
-															</div>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-lg-4 col-md-4">
-											<div class="widget">
-												<h6 class="widget-title">Guest Rating</h6>
-												<div class="filter-rating">
-													<form action="#" method="post">
-														<div class="row m-0">
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox1" value="">
-																<label for="checkbox1" class="btn">4.5+ <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox2" value="">
-																<label for="checkbox2" class="btn">4 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox3" value="">
-																<label for="checkbox3" class="btn">3.5 <i class="fa fa-star"></i></label>
-															</div>
-															<div class="form-check col-auto p-0 pe-1">
-																<input type="checkbox" class="btn-check" name="checkbox4" value="">
-																<label for="checkbox4" class="btn">3 <i class="fa fa-star"></i></label>
-															</div>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Button Box -->
-							<div class="button-box">
-								<button class="btn-style-two theme-btn">
-									<span class="btn-wrap">
-										<span class="text-one">Search</span>
-										<span class="text-two">Search</span>
-									</span>
-								</button>
-							</div></div></div>
-						</form>
-					</div>
-					<!-- End Travel Form -->
-				</div>
-			</div>
-		
-	</section>
+	
 	<!-- End Booking Two -->
 
 	<!-- Popular Hotels -->
@@ -334,19 +330,16 @@
 								<div class="hotel-block_one-inner">
 									<div class="hotel-block_one-image">
 										<div class="rating">
-											<span class="fa fa-star"></span>
-											<span class="fa fa-star"></span>
-											<span class="fa fa-star"></span>
-											<span class="fa fa-star"></span>
-											<span class="fa fa-star"></span>
+											<span *ngFor="let _ of [].constructor(hotel.categorie)" class="fa fa-star"></span>
+					
 										</div>
-										<a href="hotel-details.html"><img src="assets/images/resource/hotel-1.jpg" alt="" /></a>
+										<a routerLink="/hotelDetails/{{hotel.id_hotel}}"><img [src]="'assets/images/hotels/' +hotelImages[hotel.id_hotel]" class="hotelImage" alt="" /></a>
 									</div>
 									<div class="hotel-block_one-content">
-										<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Grand Elysée</a></h5>
-										<div class="hotel-block_one-location">Paris, France</div>
-										<div class="hotel-block_one-price">$ 350 / night</div>
-										<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
+										<h5 class="hotel-block_one-heading"><a routerLink="/hotelDetails/{{hotel.id_hotel}}">{{ hotel.nom }}</a></h5>
+										<div class="hotel-block_one-location">{{ destinations[hotel.id_destination] }}</div>
+										<div class="hotel-block_one-price">{{ hotel.prix | number: '1.2-2' }} / night</div>
+										<a class="hotel-block_one-arrow flaticon-next-2" routerLink="/hotelDetails/{{hotel.id_hotel}}"></a>
 									</div>
 								</div>
 							</div>
@@ -384,65 +377,36 @@
 	<div class="container">
         <div class="row">
 
-                <div class="col-md-6" style="margin-bottom: 20px; position: relative;">
+                <div *ngFor="let destination of alldestinations.slice(0, 2)" class="col-md-6" style="margin-bottom: 20px; position: relative;">
                     <div class="card text-bg-dark">
                         <a href="#">
-                            <img src="assets\images\clients\15.png" class="card-img" alt="..." style="width: 100%; height: 300px;">
+                            <img src="assets/images/destinations/{{destination.img}}" class="card-img" alt="..." style="width: 100%; height: 300px;">
                             <div class="card-img-overlay">
-                                <h5 class="card-title">destination.Nom</h5>
+                                <h5 class="card-title">{{destination.nom}}</h5>
                             </div>
                         </a>
                     </div>
                 </div>
                 <!--  -->
-                <div class="col-md-6" style="margin-bottom: 20px; position: relative;">
-                    <div class="card text-bg-dark">
-                        <a href="#">
-                            <img src="assets\images\clients\14.png" class="card-img" alt="..." style="width: 100%; height: 300px;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">destination.Nom</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                
 
 
         </div>
         <!-- 2 images -->
         <div class="row">
 
-                <div class="col-md-4" style="margin-bottom: 20px; position: relative;">
+                <div *ngFor="let destination of alldestinations.slice(2, 5)" class="col-md-4" style="margin-bottom: 20px; position: relative;">
                     <div class="card text-bg-dark">
                         <a href="#">
-                            <img src="assets\images\clients\12.png" class="card-img" alt="..." style="width: 100%; height: 300px;">
+                            <img src="assets/images/destinations/{{destination.img}}" class="card-img" alt="..." style="width: 100%; height: 300px;">
                             <div class="card-img-overlay">
-                                <h5 class="card-title">destination.Nom</h5>
+                                <h5 class="card-title">{{destination.nom}}</h5>
                             </div>
                         </a>
                     </div>
                 </div>
-                <!--  -->
-                <div class="col-md-4" style="margin-bottom: 20px; position: relative;">
-                    <div class="card text-bg-dark">
-                        <a href="#">
-                            <img src="assets\images\clients\10.png" class="card-img" alt="..." style="width: 100%; height: 300px;">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">destination.Nom</h5>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            <!--  -->
-            <div class="col-md-4" style="margin-bottom: 20px; position: relative;">
-                <div class="card text-bg-dark">
-                    <a href="#">
-                        <img src="assets\images\clients\10.png" class="card-img" alt="..." style="width: 100%; height: 300px;">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">destination.Nom</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
+                
+            
         </div>
     </div>
     <!-- end destination -->

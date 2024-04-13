@@ -10,7 +10,6 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-
 import { NavbarComponent } from './admin/layout/navbar/navbar.component';
 import { MeunComponent } from './admin/layout/meun/meun.component';
 import { ListehotelComponent } from './admin/listehotel/listehotel.component';
