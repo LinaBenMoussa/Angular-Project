@@ -67,14 +67,44 @@ export class HotelsComponent implements OnInit {
         this.getHotelImage(hotel.id_hotel);
         this.getDestinationById(hotel.id_destination); 
         console.log(this.hotelImages);
-        this.searchForm.reset();
+        
       });
     },
     (error) => {
       console.log('Erreur lors du chargement des hôtels :', error);
     }
-     
    ) 
+   
+   this.searchForm.get('destination')?.setValue(0);
+   this.searchForm.get('minPrice')?.setValue(0);
+   this.searchForm.get('maxPrice')?.setValue(0);
+
+   
+  }
+
+  searchHotelsByDestination(id_destination: number): void {
+    // Code pour effectuer une recherche de hôtels
+    let filter = {
+      id_destination:id_destination,
+      minPrice:0,
+      maxPrice:0
+    } as FilterSearch;
+   this.hotelService.searchHotels(filter).subscribe(
+    
+     (data: Hotel[]) => {
+       this.hotels = data;
+       this.hotels.forEach(hotel => {
+        this.getHotelImage(hotel.id_hotel);
+        this.getDestinationById(hotel.id_destination); 
+        console.log(this.hotelImages);
+        
+      });
+    },
+    (error) => {
+      console.log('Erreur lors du chargement des hôtels :', error);
+    }
+   ) 
+   
   }
 
   async getHotelImage(id: number): Promise<void> {
