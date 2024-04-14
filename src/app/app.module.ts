@@ -16,6 +16,9 @@ import { MeunComponent } from './admin/layout/meun/meun.component';
 import { ListehotelComponent } from './admin/listehotel/listehotel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OnlyNumberDirective } from './Directives/only-number.directive';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { OnlyNumberDirective } from './Directives/only-number.directive';
     MeunComponent,
     ListehotelComponent,
     TrustUrlPipe,
-     OnlyNumberDirective
+     OnlyNumberDirective,
+     LoginComponent,
+     SignupComponent,
+     HotelBookingComponent
 
   ],
   imports: [
