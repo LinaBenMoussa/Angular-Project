@@ -4,6 +4,7 @@ export interface Hotel {
     categorie: number;
     nbre_chambres: number;
     localisation: string;
+    srcMaps: string;
     prix:number,
     id_destination: number;
   }

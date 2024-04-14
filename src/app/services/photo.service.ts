@@ -17,7 +17,7 @@ export class PhotoService {
   }
 
   getPhotosForHotel(hotelId: number): Observable<Photo[]> {
-    const url = `${this.apiUrl}/${hotelId}`;
+    const url = `${this.apiUrl}/hotel/${hotelId}`;
     console.log("service photo",url)
     return this.http.get<Photo[]>(url);
   }

@@ -3,17 +3,17 @@
 
     <div class="page-wrapper">
     <!-- Page Banner -->
-	<section class="page-banner" style="background-image: url(assets/images/background/17.jpg)">
+	<section class="page-banner" style="background-image: url(/assets/images/background/17.jpg)">
 		<div class="auto-container">
 			<ul class="page-breadbrumbs">
 				<li><a href="#">Home</a></li>
 				<li>destination</li>
 				<li>hotels</li>
 			</ul>
-			<h1 class="page-banner_title">GRAND ELYSÉE</h1>
+			<h1 class="page-banner_title">{{hotelData.nom}}</h1>
 			<div class="banner-rating">
 				<i class="fas fa-map-marker-alt fa-fw"></i>
-				10 Rue de la Paix 75001 Paris, France &ensp; | &ensp;
+				{{hotelData.localisation}} &ensp; | &ensp;
 				<span class="fa fa-star"></span>
 				<span class="fa fa-star"></span>
 				<span class="fa fa-star"></span>
@@ -30,24 +30,15 @@
 			<div class="row clearfix">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<div class="image">
-						<a class="lightbox-image" href="assets/images/gallery/48.jpg"><img src="assets/images/gallery/48.jpg" alt="" /></a>
+						<a class="lightbox-image" href="/assets/images/hotels/{{photos[0]}}"><img src="/assets/images/hotels/{{photos[0].url}}" alt="" /></a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-12">
-					<div class="image">
-						<a class="lightbox-image" href="assets/images/gallery/49.jpg"><img src="assets/images/gallery/49.jpg" alt="" /></a>
-					</div>
-					<div class="image">
-						<a class="lightbox-image" href="assets/images/gallery/50.jpg"><img src="assets/images/gallery/50.jpg" alt="" /></a>
-					</div>
-					<div class="image">
-						<img src="assets/images/gallery/51.jpg" alt="" />
-						<div class="overlay-box">
-							<div class="overlay-inner">
-								<a class="lightbox-image" href="assets/images/gallery/51.jpg">See All Photos</a>
-							</div>
-						</div>
-					</div>
+					<div *ngFor="let photo of photos.slice(1, 4)">
+						<a class="lightbox-image" href="/assets/images/hotels/{{ photo }}"><img src="/assets/images/hotels/{{ photo.url }}" alt="" /></a>
+					  </div>
+					
+					
 				</div>
 			</div>
 		</div>
@@ -67,61 +58,61 @@
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-1.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-1.png" alt="" /></span>
 							High-Speed <br> Internet
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-2.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-2.png" alt="" /></span>
 							Quality <br> Restaurant
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-3.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-3.png" alt="" /></span>
 							Spa & <br> Wellness
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-4.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-4.png" alt="" /></span>
 							Swimming <br> Pool & Sauna
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-5.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-5.png" alt="" /></span>
 							24/7 <br> Front-Desk
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-6.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-6.png" alt="" /></span>
 							Valet <br> Parking
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-7.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-7.png" alt="" /></span>
 							Laundry & <br> Dry Cleaning
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-8.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-8.png" alt="" /></span>
 							Room <br> Service
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-9.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-9.png" alt="" /></span>
 							Business Center <br> & Meeting Room
 						</div>
 
 						<!-- Hotel Feature List -->
 						<div class="hotel-feature_list">
-							<span class="icon"><img src="assets/images/icons/hotel-icon-10.png" alt="" /></span>
+							<span class="icon"><img src="/assets/images/icons/hotel-icon-10.png" alt="" /></span>
 							Luggage <br> Storage
 						</div>
 
@@ -129,7 +120,9 @@
 					<h3>LOCATION</h3>
 					<!-- Map Three -->
 					<div class="map-three">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102239.5940821881!2d10.060876351225257!3d36.79485453007146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis!5e0!3m2!1sfr!2stn!4v1712268870311!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>					</div>
+						<iframe [src]="hotelData.srcMaps | trustUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+				</div>
 					<!-- End Map Three -->
 
 
@@ -145,15 +138,15 @@
 						<div class="room-block_one-inner">
 							<div class="comfort-section">
 
-                                <a href="assets/images/gallery/52.jpg" class="lightbox-image"><img src="assets/images/gallery/52.jpg" alt=""></a>
+                                <a href="/assets/images/gallery/52.jpg" class="lightbox-image"><img src="/assets/images/hotels/52.jpg" alt=""></a>
 
 							</div>
 							<div class="room-block_one-content">
 								<div class="room-block_one-title"><a href="hotel-booking.html">Classic Room</a></div>
 								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
@@ -182,14 +175,14 @@
 					<div class="room-block_one">
 						<div class="room-block_one-inner">
 							<div class="comfort-section-1">
-								<a href="assets/images/gallery/53.jpg" class="lightbox-image"><img src="assets/images/gallery/53.jpg" alt=""></a>
+								<a href="/assets/images/gallery/53.jpg" class="lightbox-image"><img src="/assets/images/gallery/53.jpg" alt=""></a>
 							</div>
 							<div class="room-block_one-content">
 								<div class="room-block_one-title"><a href="hotel-booking.html">Deluxe Room</a></div>
 								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
@@ -218,14 +211,14 @@
 					<div class="room-block_one">
 						<div class="room-block_one-inner">
 							<div class="comfort-section-2">
-								<a href="assets/images/gallery/54.jpg" class="lightbox-image"><img src="assets/images/gallery/54.jpg" alt=""></a>
+								<a href="/assets/images/gallery/54.jpg" class="lightbox-image"><img src="/assets/images/gallery/54.jpg" alt=""></a>
 							</div>
 							<div class="room-block_one-content">
 								<div class="room-block_one-title"><a href="hotel-booking.html">Junior Suite</a></div>
 								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
@@ -254,14 +247,14 @@
 					<div class="room-block_one">
 						<div class="room-block_one-inner">
 							<div class="comfort-section-3">
-								<a href="assets/images/gallery/55.jpg" class="lightbox-image"><img src="assets/images/gallery/55.jpg" alt=""></a>
+								<a href="/assets/images/gallery/55.jpg" class="lightbox-image"><img src="/assets/images/gallery/55.jpg" alt=""></a>
 							</div>
 							<div class="room-block_one-content">
 								<div class="room-block_one-title"><a href="hotel-booking.html">Executive Suite</a></div>
 								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
@@ -295,12 +288,12 @@
 							<div class="text">“We had a wonderful stay at the Grand Elysée Hotel. The staff was extremely friendly and helpful, and the room was spacious, clean, and comfortable. The hotel's location is perfect, with many popular attractions and restaurants within walking distance. We also enjoyed the hotel's restaurant and spa, which were both excellent. Overall, it was a truly luxurious and memorable experience.”</div>
 							<div class="news-block_four-author">
 								<div class="news-block_four-author_image">
-									<img src="assets/images/resource/author-9.jpg" alt="" />
+									<img src="/assets/images/resource/author-9.jpg" alt="" />
 								</div>
 								Maria Garcia
 								<span>Client from Spain</span>
 							</div>
-							<div class="hotel-review_pattern" style="background-image: url(assets/images/icons/pattern-3.png)"></div>
+							<div class="hotel-review_pattern" style="background-image: url(/assets/images/icons/pattern-3.png)"></div>
 						</div>
 					</div>
 
@@ -311,12 +304,12 @@
 							<div class="text">“My wife and I stayed at the Grand Elysée Hotel for our honeymoon, and we couldn't have been happier with our experience. The hotel's service and facilities were exceptional, and the staff went above and beyond to make our stay special. We especially enjoyed the spa and fitness center, which were both top-notch. The location of the hotel is also excellent, with many popular attractions nearby. We highly recommend!”</div>
 							<div class="news-block_four-author">
 								<div class="news-block_four-author_image">
-									<img src="assets/images/resource/author-10.jpg" alt="" />
+									<img src="/assets/images/resource/author-10.jpg" alt="" />
 								</div>
 								Jonathan Smith
 								<span>Client from United States</span>
 							</div>
-							<div class="hotel-review_pattern" style="background-image: url(assets/images/icons/pattern-3.png)"></div>
+							<div class="hotel-review_pattern" style="background-image: url(/assets/images/icons/pattern-3.png)"></div>
 						</div>
 					</div>
 
@@ -378,7 +371,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="#"><img src="D:/angularWorkspace/Hotel/src/assets/images/resource/hotel-6.jpg" alt="" /></a>
+									<a href="#"><img src="D:/angularWorkspace/Hotel/src//assets/images/resource/hotel-6.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Hotel de Crillon</a></h5>
@@ -400,7 +393,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="hotel-details.html"><img src="assets/images/resource/hotel-7.jpg" alt="" /></a>
+									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-7.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Le Bristol</a></h5>
@@ -422,7 +415,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="hotel-details.html"><img src="assets/images/resource/hotel-8.jpg" alt="" /></a>
+									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-8.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Shangri-La Hotel</a></h5>
@@ -444,7 +437,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="hotel-details.html"><img src="assets/images/resource/hotel-6.jpg" alt="" /></a>
+									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-6.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Hotel de Crillon</a></h5>
@@ -466,7 +459,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="hotel-details.html"><img src="assets/images/resource/hotel-7.jpg" alt="" /></a>
+									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-7.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Le Bristol</a></h5>
@@ -488,7 +481,7 @@
 										<span class="fa fa-star"></span>
 										<span class="fa fa-star"></span>
 									</div>
-									<a href="hotel-details.html"><img src="assets/images/resource/hotel-8.jpg" alt="" /></a>
+									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-8.jpg" alt="" /></a>
 								</div>
 								<div class="hotel-block_one-content">
 									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Shangri-La Hotel</a></h5>
@@ -507,7 +500,7 @@
 	<!-- End Hotel Detail Nearby -->
 
 	<!-- CTA One -->
-	<section class="cta-one" style="background-image: url(assets/images/background/2.jpg)">
+	<section class="cta-one" style="background-image: url(/assets/images/background/2.jpg)">
 		<div class="auto-container">
 			<!-- Title Box -->
 			<div class="cta-one_title-box">

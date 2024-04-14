@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TrustUrlPipe } from './pipes/trust-url.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     NavbarComponent,
     MeunComponent,
-    ListehotelComponent,
+    ListehotelComponent,TrustUrlPipe
 
   ],
   imports: [
