@@ -5,6 +5,8 @@ import { HotelService } from '../services/hotel.service';
 import { PhotoService } from '../services/photo.service';
 import { DestinationService } from '../services/destination.service'; // Importer le service de destinations
 import { Destination } from '../Models/Destination.model'; // Importer le modèle de destination
+import { FilterSearch } from '../Models/FilterSearch.model';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-hotels',
@@ -17,8 +19,16 @@ export class HotelsComponent implements OnInit {
   hotels: Hotel[] = [];
   hotelImages: { [hotelId: number]: string } = {}; // Tableau associatif pour stocker les images des hôtels
   destinations: { [destinationId: number]: string } = {}; // Tableau associatif pour stocker les noms des destinations
-
-  constructor(private hotelService: HotelService, private photoService: PhotoService, private destinationService: DestinationService) {}
+Destination: any;
+searchForm = this.formBuilder.group({
+  destination: 0,
+  minPrice: 0,
+  maxPrice: 0
+});
+  constructor(private hotelService: HotelService, 
+    private photoService: PhotoService, 
+    private destinationService: DestinationService,
+    private formBuilder: FormBuilder,) {}
 
   ngOnInit(): void {
     this.loadHotels();
@@ -32,7 +42,7 @@ export class HotelsComponent implements OnInit {
         // Charger les images des hôtels et les noms des destinations
         this.hotels.forEach(hotel => {
           this.getHotelImage(hotel.id_hotel);
-          this.getDestinationById(hotel.id_destination); // Obtenir la destination complète
+          this.getDestinationById(hotel.id_destination); 
           console.log(this.hotelImages);
         });
       },
@@ -41,6 +51,32 @@ export class HotelsComponent implements OnInit {
       }
     );
   }
+
+  searchHotel(): void {
+    // Code pour effectuer une recherche de hôtels
+    let filter = {
+      id_destination:this.searchForm.value.destination,
+      minPrice:this.searchForm.value.minPrice,
+      maxPrice:this.searchForm.value.maxPrice
+    } as FilterSearch;
+   this.hotelService.searchHotels(filter).subscribe(
+    
+     (data: Hotel[]) => {
+       this.hotels = data;
+       this.hotels.forEach(hotel => {
+        this.getHotelImage(hotel.id_hotel);
+        this.getDestinationById(hotel.id_destination); 
+        console.log(this.hotelImages);
+      });
+    },
+    (error) => {
+      console.log('Erreur lors du chargement des hôtels :', error);
+    }
+     
+   ) 
+  }
+
+  
 
   async getHotelImage(id: number): Promise<void> {
     if (!this.hotelImages[id]) { // Vérifier si l'image n'a pas déjà été chargée

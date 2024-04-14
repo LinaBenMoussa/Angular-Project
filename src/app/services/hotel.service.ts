@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Hotel } from '../Models/Hotel.model';
+import { FilterSearch } from '../Models/FilterSearch.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,9 @@ export class HotelService {
   deleteHotel(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
+  }
+
+  searchHotels(filter: FilterSearch): Observable<Hotel[]> {
+    return this.http.post<Hotel[]>(this.apiUrl + '/search', filter);
   }
 }
