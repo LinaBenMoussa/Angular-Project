@@ -134,19 +134,19 @@
 					<!-- End Hotel Rooms -->
 
 					<!-- Room Block One -->
-					<div class="room-block_one">
+					<div *ngFor="let chambre of chambres" class="room-block_one">
 						<div class="room-block_one-inner">
 							<div class="comfort-section">
 
-                                <a href="/assets/images/gallery/52.jpg" class="lightbox-image"><img src="/assets/images/hotels/52.jpg" alt=""></a>
+                                <a href="/assets/images/gallery/52.jpg" class="lightbox-image"><img src="/assets/images/chambres/{{chambre.img}}" alt=""></a>
 
 							</div>
 							<div class="room-block_one-content">
-								<div class="room-block_one-title"><a href="hotel-booking.html">Classic Room</a></div>
+								<div class="room-block_one-title"><a href="hotel-booking.html">{{chambre.nom}}</a></div>
 								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>{{chambre.surface}}</li>
 									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
+									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>{{chambre.nbre_personnes}} guests</li>
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
@@ -156,7 +156,7 @@
 									<li>No Breakfast</li>
 								</ul>
 								<div class="price-box">
-									<div class="price">$ 350 <span>/ night</span></div>
+									<div class="price">$ {{chambre.prix}} <span>/ night</span></div>
 									<!-- Button Box -->
 									<div class="button-box">
 										<a class="btn-style-two theme-btn" href="hotel-booking.html">
@@ -171,115 +171,7 @@
 						</div>
 					</div>
 
-					<!-- Room Block One -->
-					<div class="room-block_one">
-						<div class="room-block_one-inner">
-							<div class="comfort-section-1">
-								<a href="/assets/images/gallery/53.jpg" class="lightbox-image"><img src="/assets/images/gallery/53.jpg" alt=""></a>
-							</div>
-							<div class="room-block_one-content">
-								<div class="room-block_one-title"><a href="hotel-booking.html">Deluxe Room</a></div>
-								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
-								</ul>
-								<ul class="room-block_one-list">
-									<li>Free Wi-Fi</li>
-									<li>AC</li>
-									<li>Toiletries</li>
-									<li>Mini Bar</li>
-									<li>No Breakfast</li>
-								</ul>
-								<div class="price-box">
-									<div class="price">$ 750 <span>/ night</span></div>
-									<!-- Button Box -->
-									<div class="button-box">
-										<a class="btn-style-two theme-btn" href="hotel-booking.html">
-											<div class="btn-wrap">
-												<span class="text-one">Book Now</span>
-												<span class="text-two">Book Now</span>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Room Block One -->
-					<div class="room-block_one">
-						<div class="room-block_one-inner">
-							<div class="comfort-section-2">
-								<a href="/assets/images/gallery/54.jpg" class="lightbox-image"><img src="/assets/images/gallery/54.jpg" alt=""></a>
-							</div>
-							<div class="room-block_one-content">
-								<div class="room-block_one-title"><a href="hotel-booking.html">Junior Suite</a></div>
-								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
-								</ul>
-								<ul class="room-block_one-list">
-									<li>Free Wi-Fi</li>
-									<li>AC</li>
-									<li>Toiletries</li>
-									<li>Mini Bar</li>
-									<li>No Breakfast</li>
-								</ul>
-								<div class="price-box">
-									<div class="price">$ 450 <span>/ night</span></div>
-									<!-- Button Box -->
-									<div class="button-box">
-										<a class="btn-style-two theme-btn" href="hotel-booking.html">
-											<div class="btn-wrap">
-												<span class="text-one">Book Now</span>
-												<span class="text-two">Book Now</span>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Room Block One -->
-					<div class="room-block_one">
-						<div class="room-block_one-inner">
-							<div class="comfort-section-3">
-								<a href="/assets/images/gallery/55.jpg" class="lightbox-image"><img src="/assets/images/gallery/55.jpg" alt=""></a>
-							</div>
-							<div class="room-block_one-content">
-								<div class="room-block_one-title"><a href="hotel-booking.html">Executive Suite</a></div>
-								<ul class="room-block_one-options">
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-11.png" alt="" /></span>30 sqm</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-12.png" alt="" /></span>Queen Size</li>
-									<li><span class="icon"><img src="/assets/images/icons/hotel-icon-13.png" alt="" /></span>2 guests</li>
-								</ul>
-								<ul class="room-block_one-list">
-									<li>Free Wi-Fi</li>
-									<li>AC</li>
-									<li>Toiletries</li>
-									<li>Mini Bar</li>
-									<li>No Breakfast</li>
-								</ul>
-								<div class="price-box">
-									<div class="price">$ 550 <span>/ night</span></div>
-									<!-- Button Box -->
-									<div class="button-box">
-										<a class="btn-style-two theme-btn" href="hotel-booking.html">
-											<div class="btn-wrap">
-												<span class="text-one">Book Now</span>
-												<span class="text-two">Book Now</span>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
+					
 
 					<!-- Comment -->
 					<div class="hotel-detail_review">

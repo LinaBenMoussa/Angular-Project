@@ -4,6 +4,8 @@ import { HotelService } from '../services/hotel.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PhotoService } from '../services/photo.service';
 import { Photo } from '../Models/Photo.model';
+import { ChambreService } from '../services/chambre.service';
+import { Chambre } from '../Models/Chambre.model';
 
 @Component({
   selector: 'app-hotel-details',
@@ -14,13 +16,17 @@ export class HotelDetailsComponent implements OnInit {
   idHotel: string = "";
   hotelData: any;
   photos: Photo[] = [];
+  chambres: Chambre[] = [];
+
+  
   safeSrcMaps: SafeResourceUrl | null = null; // Initialisation de safeSrcMaps à null
 
   constructor(
     private hotelservice: HotelService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private photoservice: PhotoService
+    private photoservice: PhotoService,
+    private chambreservice:ChambreService
   ) { }
 
   ngOnInit() {
@@ -34,15 +40,16 @@ export class HotelDetailsComponent implements OnInit {
         console.log("idhotel:", this.idHotel);
         this.hotelservice.getHotelById(num).subscribe(data => {
           this.hotelData = data;
-
-          // Sécurisation de l'URL de la carte
           this.safeSrcMaps = this.sanitizer.bypassSecurityTrustResourceUrl(this.hotelData.srcMaps);
         });
 
         this.photoservice.getPhotosForHotel(num).subscribe(data => {
           this.photos = data;
           console.log("photos:", this.photos);
-        }); // Ajout de la fermeture de la méthode subscribe
+        });
+        this.chambreservice.getChambresByIdHotel(num).subscribe(data=>{
+          this.chambres=data;
+        }) ;
       } else {
         // Gérez le cas où idHotelParam est null, par exemple, redirigez l'utilisateur ou affichez un message d'erreur.
       }
