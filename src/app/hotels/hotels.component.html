@@ -60,20 +60,21 @@
 													<label>Price</label>
 													<div class="row clearfix">
 														<div class="col-lg-5 col-md-5 col-sm-5">
-															<input type="text" formControlName="minPrice" placeholder="$1,000"
-															required="">
+															<input type="text" formControlName="minPrice"
+																placeholder="$1,000" required="" onlyNumber>
 														</div>
-														<div class="col-lg-1 col-md-1 col-sm-1" style="margin-top: 17px;">
+														<div class="col-lg-1 col-md-1 col-sm-1"
+															style="margin-top: 17px;">
 															<span>-</span>
 														</div>
 														<div class="col-lg-5 col-md-5 col-sm-5">
-															<input type="text" formControlName="maxPrice" placeholder="$2,000"
-														required="">
+															<input type="text" formControlName="maxPrice"
+																placeholder="$2,000" required="" onlyNumber>
 														</div>
 													</div>
-													
-													
-													
+
+
+
 												</div>
 											</div>
 
@@ -87,7 +88,7 @@
 											</button>
 
 										</div>
-										<pre>{{ searchForm.value | json }}</pre>
+										<!-- <pre>{{ searchForm.value | json }}</pre> -->
 									</form>
 
 								</div>

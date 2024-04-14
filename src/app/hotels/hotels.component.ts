@@ -6,7 +6,7 @@ import { PhotoService } from '../services/photo.service';
 import { DestinationService } from '../services/destination.service'; // Importer le service de destinations
 import { Destination } from '../Models/Destination.model'; // Importer le modèle de destination
 import { FilterSearch } from '../Models/FilterSearch.model';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-hotels',
@@ -21,9 +21,9 @@ export class HotelsComponent implements OnInit {
   destinations: { [destinationId: number]: string } = {}; // Tableau associatif pour stocker les noms des destinations
 Destination: any;
 searchForm = this.formBuilder.group({
-  destination: 0,
-  minPrice: 0,
-  maxPrice: 0
+  destination: new FormControl(0),
+  minPrice: new FormControl(0),
+  maxPrice: new FormControl(0)
 });
   constructor(private hotelService: HotelService, 
     private photoService: PhotoService, 

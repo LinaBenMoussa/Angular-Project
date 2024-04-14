@@ -15,6 +15,7 @@ import { NavbarComponent } from './admin/layout/navbar/navbar.component';
 import { MeunComponent } from './admin/layout/meun/meun.component';
 import { ListehotelComponent } from './admin/listehotel/listehotel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OnlyNumberDirective } from './Directives/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     NavbarComponent,
     MeunComponent,
-    ListehotelComponent,TrustUrlPipe
+    ListehotelComponent,
+    TrustUrlPipe,
+     OnlyNumberDirective
 
   ],
   imports: [
