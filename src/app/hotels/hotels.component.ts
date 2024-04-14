@@ -19,8 +19,8 @@ export class HotelsComponent implements OnInit {
   hotels: Hotel[] = [];
   hotelImages: { [hotelId: number]: string } = {}; // Tableau associatif pour stocker les images des hôtels
   destinations: { [destinationId: number]: string } = {}; // Tableau associatif pour stocker les noms des destinations
-Destination: any;
-searchForm = this.formBuilder.group({
+  Destination: any;
+  searchForm = this.formBuilder.group({
   destination: new FormControl(0),
   minPrice: new FormControl(0),
   maxPrice: new FormControl(0)
@@ -67,6 +67,7 @@ searchForm = this.formBuilder.group({
         this.getHotelImage(hotel.id_hotel);
         this.getDestinationById(hotel.id_destination); 
         console.log(this.hotelImages);
+        this.searchForm.reset();
       });
     },
     (error) => {
@@ -75,8 +76,6 @@ searchForm = this.formBuilder.group({
      
    ) 
   }
-
-  
 
   async getHotelImage(id: number): Promise<void> {
     if (!this.hotelImages[id]) { // Vérifier si l'image n'a pas déjà été chargée
