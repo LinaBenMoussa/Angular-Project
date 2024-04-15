@@ -9,6 +9,7 @@ import { SessionService } from 'src/app/services/session.service';
   styleUrls: ['./list-destination.component.css']
 })
 export class ListDestinationComponent {
+  
   destinations: Destination[] = [];
   constructor(private session : SessionService,private destinationService: DestinationService) {}
   ngOnInit(): void {
@@ -24,4 +25,5 @@ export class ListDestinationComponent {
       }
     );
   }
+  
 }

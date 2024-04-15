@@ -9,8 +9,10 @@ import { SignupComponent } from './signup/signup.component';
 import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
 import { ListDestinationComponent } from './admin/list-destination/list-destination.component';
 import { ListHotelComponent } from './admin/list-hotel/list-hotel.component';
-import { AddhotelComponent } from './admin/add-hotel/addhotel.component';
-
+import { EditDestinationComponent } from './admin/edit-destination/edit-destination.component';
+import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
+import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
+import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
@@ -23,7 +25,11 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'list-destination', component: ListDestinationComponent },
   { path: 'list-hotel', component: ListHotelComponent },
-  { path: 'add-hotel', component: AddhotelComponent },
+  { path: 'add-destination', component: AddDestinationComponent },
+  { path: 'edit-destination', component: EditDestinationComponent },
+  { path: 'edit-hotel', component: EditHotelComponent },
+  { path: 'add-hotel', component: AddHotelComponent },
+
   { path: 'hotelDetails/:idHotel', component: HotelDetailsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '**', redirectTo: 'home' } // Route wildcard pour les URL non reconnues

@@ -1,0 +1,7 @@
+/* Style du contenu principal */
+.main-content {
+  margin-left: 250px; /* Marge à gauche pour laisser de l'espace à la barre latérale */
+  padding: 44px;
+  background-color: #fff; /* Set a background color for the main content */
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2); /* Add a shadow to the main content */
+}

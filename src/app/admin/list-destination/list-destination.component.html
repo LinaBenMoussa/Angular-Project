@@ -2,20 +2,25 @@
 <div class="main-content">
 
   <div class="container mt-4">
-    <h2>Liste de distances</h2>
+    <h2>List of distances</h2>
+    <button type="button" class="btn btn-primary mb-4" id="butt" routerLink="/add-destination">Add distances</button>
     <div class="row">
       <div *ngFor="let destination of destinations" class="col-md-4">
         <div class="card">
-          <img src="/assets/images/destinations/{{destination.img}}" class="card-img-top" alt="Imagem 1">
+          <img src="/assets/images/destinations/{{destination.img}}" class="card-img-top" alt="Image 1">
           <div class="card-body">
             <h5 class="card-title">{{destination.nom}}</h5>
-
+            <div class="d-flex justify-content-between">
+              <!-- Bouton "Éditer" -->
+              <button type="button" class="btn btn-warning" >Éditer</button>
+              <!-- Bouton "Supprimer" -->
+              <button type="button" class="btn btn-danger" >DELETE</button>
+            </div>
           </div>
         </div>
       </div>
-      
-     
     </div>
+
   </div>
 
   </div>

@@ -11,8 +11,8 @@
 
       <!-- User info and logout button -->
       <div class="d-flex align-items-center">
-        <span class="navbar-text mr-3" >Username</span> <!-- Replace 'Username' with the connected user's name -->
-        <button class="btn btn-outline-danger" style="margin-left: 20px;">Logout</button>
+        <span *ngIf="isLogin()" class="navbar-text mr-3" >{{userName}}</span> <!-- Replace 'Username' with the connected user's name -->
+        <button class="btn btn-outline-danger" (click)="logout()" style="margin-left: 20px;">Logout</button>
       </div>
     </div>
   </div>

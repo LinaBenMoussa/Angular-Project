@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TrustUrlPipe } from './pipes/trust-url.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
+// import {AddHotelComponent} from './admin/add-hotel/addhotel.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -25,7 +24,11 @@ import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
 
+import { EditDestinationComponent } from './admin/edit-destination/edit-destination.component';
+import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
+import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 @NgModule({
   declarations: [ListDestinationComponent,
     AppComponent,
@@ -36,20 +39,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HotelDetailsComponent,
     DashboardComponent,
     NavbarComponent,
+    // AddHotelComponent,
     ListHotelComponent,
     TrustUrlPipe,
      OnlyNumberDirective,
      LoginComponent,
      SignupComponent,
-     HotelBookingComponent
-
+     HotelBookingComponent,
+     AddDestinationComponent,
+     EditDestinationComponent,
+     EditHotelComponent,
+     AddHotelComponent
   ],
   imports: [MatSelectModule,MatInputModule,MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatToolbarModule, MatButtonModule, MatIconModule
+    MatButtonModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

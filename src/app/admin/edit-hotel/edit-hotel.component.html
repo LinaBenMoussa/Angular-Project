@@ -1,10 +1,14 @@
-
+<app-navbar></app-navbar>
 <div class="main-content">
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Add a Hotel</h2>
+    <h2 class="text-center mb-4">edit Hotel</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
         <form>
+          <div class="mb-3">
+            <label for="photos" class="form-label">Hotel Photos</label>
+            <input type="file" class="form-control" id="photos" accept="image/*" multiple>
+          </div>
           <div class="mb-3">
             <label for="nom" class="form-label">Hotel Name</label>
             <input type="text" class="form-control" id="nom" placeholder="Enter hotel name" required>
@@ -33,7 +37,7 @@
             <label for="prix" class="form-label">Price</label>
             <input type="number" class="form-control" id="prix" placeholder="Enter price" required>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Edit</button>
         </form>
       </div>
     </div>
