@@ -4,60 +4,16 @@
   <div class="container mt-4">
     <h2>Liste de distances</h2>
     <div class="row">
-      <div class="col-md-4">
+      <div *ngFor="let destination of destinations" class="col-md-4">
         <div class="card">
-          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem 1">
+          <img src="/assets/images/destinations/{{destination.img}}" class="card-img-top" alt="Imagem 1">
           <div class="card-body">
-            <h5 class="card-title">Distância 1</h5>
+            <h5 class="card-title">{{destination.nom}}</h5>
 
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/150"  class="card-img-top" alt="Imagem 2">
-          <div class="card-body">
-            <h5 class="card-title">Distância 2</h5>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/150"  class="card-img-top" alt="Imagem 3">
-          <div class="card-body">
-            <h5 class="card-title">Distância 3</h5>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem 1">
-          <div class="card-body">
-            <h5 class="card-title">Distância 1</h5>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/150"  class="card-img-top" alt="Imagem 2">
-          <div class="card-body">
-            <h5 class="card-title">Distância 2</h5>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/150"  class="card-img-top" alt="Imagem 3">
-          <div class="card-body">
-            <h5 class="card-title">Distância 3</h5>
-
-          </div>
-        </div>
-      </div>
+      
      
     </div>
   </div>
