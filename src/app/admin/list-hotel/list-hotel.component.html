@@ -3,39 +3,22 @@
   <div class="container mt-5">
     <h2 class="text-center mb-4">List of Hotels</h2>
     <!-- Bouton "Ajouter un hôtel" -->
-    <button type="button" class="btn btn-primary mb-4" id="butt">Add a hotel</button>
+    <button type="button" class="btn btn-primary mb-4" id="butt" routerLink="/add-hotel">Add hotel</button>
     <div class="row">
-      <div class="col">
-        <!-- Boucle sur les hôtels -->
+      <!-- Boucle sur les hôtels -->
+      <div *ngFor="let hotel of hotels" class="col-md-4 mb-4">
         <div class="card">
-          <!-- Image de l'hôtel -->
-          <div class="row">
-            <!-- Première image -->
-            <div class="col-md-4">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Hotel Image" style="height: 200px;">
-            </div>
-            <!-- Deuxième image -->
-            <div class="col-md-4">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Hotel Image" style="height: 200px;">
-            </div>
-            <!-- Troisième image -->
-            <div class="col-md-4">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Hotel Image" style="height: 200px;">
-            </div>
-          </div>
+          <img src="/assets/images/hotels/{{hotelImages[hotel.id_hotel]}}" class="card-img-top" alt="Hotel Image" style="height: 200px;">
           <div class="card-body">
-            <h5 class="card-title">Nom de l'hôtel</h5>
-            <p class="card-text">Catégorie</p>
-            <p class="card-text">Nombre de chambres</p>
-            <p class="card-text">Localisation</p>
-            <p class="card-text">Prix</p>
+            <h5 class="card-title">{{hotel.nom}}</h5>
+            <p class="card-text">{{hotel.categorie}}</p>
+            <p class="card-text">{{hotel.localisation}}</p>
+            <p class="card-text">{{hotel.prix}}$</p>
             <div class="d-flex justify-content-between align-items-center">
-              <!-- Bouton "Détails" -->
-              <button type="button" class="btn btn-info">Details</button>
-              <!-- Boutons "Modifier" et "Supprimer" -->
+             
               <div>
-                <button type="button" class="btn btn-warning me-2">Edit</button>
-                <button type="button" class="btn btn-danger">DELETE</button>
+                <button type="button" [routerLink]="'/edit-hotel/' + hotel.id_hotel" class="btn btn-warning me-2">Edit</button>
+                <button type="button" (click)="onDelete(hotel.id_hotel)" class="btn btn-danger">DELETE</button>
               </div>
             </div>
           </div>

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="main-content">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Liste des Images d'Hôtels</h2>
+    <div class="row">
+      <!-- Boucle sur la liste des images d'hôtels -->
+      <div *ngFor="let image of photos" class="col-md-4">
+        <div class="card">
+          <!-- Affichage de l'image de l'hôtel -->
+          <img [src]="'/assets/images/hotels/' + image.url" class="card-img-top" alt="image">
+          <div class="card-body">
+            <!-- Affichage des détails de l'image -->
+            <h5 class="card-title">{{image.url}} </h5>
+            <p class="card-text">Hôtel: {{hotels[image.id_hotel]}} </p>
+            <p class="card-text">ID: {{image.id_photo}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

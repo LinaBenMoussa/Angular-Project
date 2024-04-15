@@ -40,8 +40,11 @@ export class LoginComponent implements OnInit {
           console.log("user id",this.session.getUserId());
           console.log("user name",this.session.getUserName());
           this.loginForm.reset();
-          
-          this.router.navigate(['/home']);
+          if (this.session.getUserRole() === 1) {
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/home']);
+          }
         },
         (error) => {
           console.error(error); // Gérez les erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
