@@ -13,6 +13,8 @@ import { EditDestinationComponent } from './admin/edit-destination/edit-destinat
 import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
 import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
 import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
+import { ListeImageHotelComponent } from './admin/liste-image-hotel/liste-image-hotel.component';
+import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   
   { path: 'signup', component: SignupComponent },
   { path: 'booking', component: HotelBookingComponent },
+  { path: 'images', component: ListeImageHotelComponent },
+  { path: 'chambres', component: ListeChambreComponent },
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'list-destination', component: ListDestinationComponent },

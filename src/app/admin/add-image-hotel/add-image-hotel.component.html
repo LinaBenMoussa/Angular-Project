@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="main-content">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Add Hotel Image</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="hotel" class="form-label">Hotel</label>
+            <select class="form-select" id="hotel" required>
+              <option selected disabled>Select hotel</option>
+              <!-- Vous pouvez remplir cette liste déroulante avec les hôtels disponibles -->
+              <option>Hotel 1</option>
+              <option>Hotel 2</option>
+              <option>Hotel 3</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="photo_id" class="form-label">Photo ID</label>
+            <input type="text" class="form-control" id="photo_id" placeholder="Enter photo ID" required>
+          </div>
+          <div class="mb-3">
+            <label for="photo_name" class="form-label">Photo Name</label>
+            <input type="text" class="form-control" id="photo_name" placeholder="Enter photo name" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

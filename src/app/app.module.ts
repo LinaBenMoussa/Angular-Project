@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TrustUrlPipe } from './pipes/trust-url.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-// import {AddHotelComponent} from './admin/add-hotel/addhotel.component';
+import {AddChambreComponent} from './admin/add-chambre/add-chambre.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -25,12 +25,13 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AddDestinationComponent } from './admin/add-destination/add-destination.component';
-
+import { ListeImageHotelComponent } from './admin/liste-image-hotel/liste-image-hotel.component';
 import { EditDestinationComponent } from './admin/edit-destination/edit-destination.component';
 import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
 import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
+import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
 @NgModule({
-  declarations: [ListDestinationComponent,
+  declarations: [ListDestinationComponent,AddChambreComponent,ListeChambreComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -40,6 +41,7 @@ import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
     DashboardComponent,
     NavbarComponent,
     // AddHotelComponent,
+    ListeImageHotelComponent,
     ListHotelComponent,
     TrustUrlPipe,
      OnlyNumberDirective,
