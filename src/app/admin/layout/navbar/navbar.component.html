@@ -1,36 +1,102 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Your existing navbar items here -->
+      </ul>
+
+      <!-- User info and logout button -->
+      <div class="d-flex align-items-center">
+        <span class="navbar-text mr-3" >Username</span> <!-- Replace 'Username' with the connected user's name -->
+        <button class="btn btn-outline-danger" style="margin-left: 20px;">Logout</button>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<div class="sidebar ">
+  <!-- Logo de l'administration de l'hôtel -->
+  <div class="sidebar-logo">
+    <img src="../../../../assets/img/logohotel.png" alt="Logo de l'administration de l'hôtel" style="width: 100px; height: 100px;">
+  </div>
+
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item active" style="    font-size: 25px;">Dashboard Admin</li>
+  </ul>
+
+  <!-- Liens de la barre latérale -->
+  <ul>
+    <!-- Lien du tableau de bord avec icône -->
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <!-- Ajouter le contenu de la barre latérale ici -->
+      </ul>
+    </div>
+    <div class="dropdown" routerLink="/dashboard">
+      <button class="btn btn-primary " type="button"  style="width: 220px;  height: 60px;" >
+        <i class="fas fa-suitcase"></i> Dashboard
+      </button>
+
+    </div>
+
+  </ul>
+
+  <ul>
+    <!-- Lien du tableau de bord avec icône -->
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <!-- Ajouter le contenu de la barre latérale ici -->
+      </ul>
+    </div>
+    <div class="dropdown" routerLink="/list-destination">
+      <button class="btn btn-primary " type="button"  style="width: 220px;  height: 60px;">
+        <i class="fas fa-suitcase"></i> destination list
+      </button>
+
+    </div>
+
+    <!-- Ajoutez d'autres liens ici -->
+  </ul>
+
+  <!-- Liens de la barre latérale -->
+  <ul>
+    <!-- Lien du tableau de bord avec icône -->
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <!-- Ajouter le contenu de la barre latérale ici -->
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-primary " type="button"  style="width: 220px;  height: 60px;">
+        <i class="fas fa-suitcase"></i> destination list
+      </button>
+
+    </div>
+
+    <!-- Ajoutez d'autres liens ici -->
+  </ul>
+
+  <!-- Liens de la barre latérale -->
+  <ul>
+    <!-- Lien du tableau de bord avec icône -->
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <!-- Ajouter le contenu de la barre latérale ici -->
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-primary " type="button"  style="width: 220px;  height: 60px;">
+        <i class="fas fa-suitcase"></i> destination list
+      </button>
+
+    </div>
+
+    <!-- Ajoutez d'autres liens ici -->
+  </ul>
+</div>
+
+

@@ -15,20 +15,19 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NavbarComponent } from './admin/layout/navbar/navbar.component';
-import { MeunComponent } from './admin/layout/meun/meun.component';
-import { ListehotelComponent } from './admin/listehotel/listehotel.component';
+import { ListDestinationComponent } from './admin/list-destination/list-destination.component';
+import { ListHotelComponent } from './admin/list-hotel/list-hotel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OnlyNumberDirective } from './Directives/only-number.directive';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HotelBookingComponent } from './hotel-booking/hotel-booking.component';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [
+  declarations: [ListDestinationComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -37,8 +36,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     HotelDetailsComponent,
     DashboardComponent,
     NavbarComponent,
-    MeunComponent,
-    ListehotelComponent,
+    ListHotelComponent,
     TrustUrlPipe,
      OnlyNumberDirective,
      LoginComponent,

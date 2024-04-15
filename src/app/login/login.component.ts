@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
           console.log("user id",this.session.getUserId());
           console.log("user name",this.session.getUserName());
           this.loginForm.reset();
+          
           this.router.navigate(['/home']);
         },
         (error) => {
