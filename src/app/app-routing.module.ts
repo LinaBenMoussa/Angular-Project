@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'list-hotel', component: ListHotelComponent },
   { path: 'add-destination', component: AddDestinationComponent },
   { path: 'edit-destination', component: EditDestinationComponent },
-  { path: 'edit-hotel', component: EditHotelComponent },
+  { path: 'edit-hotel/:id', component: EditHotelComponent },
   { path: 'add-hotel', component: AddHotelComponent },
 
   { path: 'hotelDetails/:idHotel', component: HotelDetailsComponent },

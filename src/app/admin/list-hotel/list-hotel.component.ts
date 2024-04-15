@@ -79,4 +79,18 @@ export class ListHotelComponent {
       }
     );
   }
+  onDelete(id: number): void {
+    if (confirm('Are you sure you want to delete this hotel?')) {
+      this.hotelService.deleteHotel(id).subscribe(
+        () => {
+          console.log('Hotel deleted successfully.');
+          this.loadHotels();
+        },
+        (error) => {
+          console.error('Error deleting hotel:', error);
+          // Gérez les erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur.
+        }
+      );
+    }
+  }
 }

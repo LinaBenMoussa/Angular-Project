@@ -20,9 +20,12 @@
             <input type="text" formControlName="localisation" class="form-control" id="localisation" placeholder="Enter location" required>
           </div>
           <div class="mb-3">
-            <label for="id_destination" class="form-label">Destination ID</label>
-            <input type="number" formControlName="id_destination" class="form-control" id="id_destination" placeholder="Enter destination ID" required>
+            <label for="id_destination" class="form-label">Destination</label>
+            <select formControlName="id_destination" class="form-select" id="id_destination" required>
+              <option *ngFor="let destination of alldestinations" [value]="destination.id_destination">{{ destination.nom }}</option>
+            </select>
           </div>
+          
           <div class="mb-3">
             <label for="srcMaps" class="form-label">Maps Source</label>
             <input type="text" formControlName="srcMaps" class="form-control" id="srcMaps" placeholder="Enter maps source">

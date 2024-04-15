@@ -1,43 +1,40 @@
 <app-navbar></app-navbar>
 <div class="main-content">
   <div class="container mt-5">
-    <h2 class="text-center mb-4">edit Hotel</h2>
+    <h2 class="text-center mb-4">Add a Hotel</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
-          <div class="mb-3">
-            <label for="photos" class="form-label">Hotel Photos</label>
-            <input type="file" class="form-control" id="photos" accept="image/*" multiple>
-          </div>
+        <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+         
           <div class="mb-3">
             <label for="nom" class="form-label">Hotel Name</label>
-            <input type="text" class="form-control" id="nom" placeholder="Enter hotel name" required>
+            <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Enter hotel name" required>
           </div>
           <div class="mb-3">
             <label for="categorie" class="form-label">Category</label>
-            <input type="number" class="form-control" id="categorie" placeholder="Enter category" required>
+            <input type="number" formControlName="categorie" class="form-control" id="categorie" placeholder="Enter category" required>
           </div>
-          <div class="mb-3">
-            <label for="nbre_chambres" class="form-label">Number of Rooms</label>
-            <input type="number" class="form-control" id="nbre_chambres" placeholder="Enter number of rooms" required>
-          </div>
+          
           <div class="mb-3">
             <label for="localisation" class="form-label">Location</label>
-            <input type="text" class="form-control" id="localisation" placeholder="Enter location" required>
+            <input type="text" formControlName="localisation" class="form-control" id="localisation" placeholder="Enter location" required>
           </div>
           <div class="mb-3">
-            <label for="id_destination" class="form-label">Destination ID</label>
-            <input type="number" class="form-control" id="id_destination" placeholder="Enter destination ID" required>
+            <label for="id_destination" class="form-label">Destination</label>
+            <select formControlName="id_destination" class="form-select" id="id_destination" required>
+              <option *ngFor="let destination of alldestinations" [value]="destination.id_destination">{{ destination.nom }}</option>
+            </select>
           </div>
+          
           <div class="mb-3">
             <label for="srcMaps" class="form-label">Maps Source</label>
-            <input type="text" class="form-control" id="srcMaps" placeholder="Enter maps source">
+            <input type="text" formControlName="srcMaps" class="form-control" id="srcMaps" placeholder="Enter maps source">
           </div>
           <div class="mb-3">
             <label for="prix" class="form-label">Price</label>
-            <input type="number" class="form-control" id="prix" placeholder="Enter price" required>
+            <input type="number" formControlName="prix" class="form-control" id="prix" placeholder="Enter price" required>
           </div>
-          <button type="submit" class="btn btn-primary">Edit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
