@@ -1,6 +1,6 @@
 
 <div class="page-wrapper">
-	
+	<app-header></app-header>
   
 	<!-- Sticky/Fixed Nav -->
 	<div class="fixed_menu w-100">
@@ -34,23 +34,24 @@
         
                             <!-- Contact Form -->
                             <div class="booking-form text-start">
-                                <form method="post" action="#">
-
-                                    <!-- Form Group -->
-                                    <div class="form-group">
-                                        <input type="text" name="u-name" placeholder="Email or User Name">
-                                    </div>
-
-                                    <!-- Form Group -->
-                                    <div class="form-group">
-                                        <input type="password" name="password" placeholder="Password">
-                                    </div>
-
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+									<!-- Form Group -->
+									<mat-form-field appearance="fill">
+										
+										<!-- <mat-label>Email or User Name</mat-label> -->
+										<input matInput formControlName="uName" placeholder="Email or User Name">
+									</mat-form-field>
+								<br><br>
+									<!-- Form Group -->
+									<mat-form-field appearance="fill">
+										<!-- <mat-label>Password</mat-label> -->
+										<input matInput formControlName="password" type="password" placeholder="Password">
+									</mat-form-field>
+								
 									<div class="row">
 										<div class="col-lg-6">
 											<div class="form-group d-flex align-items-center gap-2">
-												<input type="checkbox" class="form-control-checkbox" name="checkbox1" value="">
-												<label class="form-label mb-0 text-capitalize fw-normal" for="checkbox1">Remember Passord</label>
+												<mat-checkbox formControlName="rememberPass">Remember Password</mat-checkbox>
 											</div>
 										</div>
 										<div class="col-lg-6">
@@ -59,17 +60,12 @@
 											</div>
 										</div>
 									</div>
-
-                                    <div class="form-group">
-                                        <button type="submit" class="btn-style-two theme-btn w-100">
-                                            <span class="btn-wrap">
-                                                <span class="text-one">Login</span>
-                                                <span class="text-two">Login</span>
-                                            </span>
-                                        </button>
-                                    </div>
-									
-                                </form>
+								
+									<div class="form-group">
+										<button mat-raised-button color="primary" type="submit">Login</button>
+									</div>
+								</form>
+								
                             </div>
                         </div>
                     </div>

@@ -94,8 +94,7 @@
             </li>
           </ul>
         </div>
-
-        <div class="other_elements_wrapper d-flex align-items-center gap-4">
+        <div *ngIf="!isLogin()" class="other_elements_wrapper d-flex align-items-center gap-4">
           <!-- Button Box -->
           <div class="button-box d-none d-sm-block">
             <a class="btn-style-one theme-btn" routerLink="/login">
@@ -111,16 +110,15 @@
               </div>
             </a>
           </div>
-
+        
           <!-- Mobile Menu Toggle Button -->
           <div class="mr_menu_toggle d-lg-none">
             <span class="toggle_line"></span>
             <span class="toggle_line"></span>
             <span class="toggle_line"></span>
           </div>
-
         </div>
-      </div>
-    </div>
+        <div class="userName" *ngIf="isLogin()">{{userName}}</div>
+        <button *ngIf="isLogin()" class="btn btn-danger" (click)="logout()">Logout</button></div></div>
   </div>
 </header>
