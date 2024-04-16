@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotel.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PhotoService } from '../services/photo.service';
@@ -20,13 +20,15 @@ export class HotelDetailsComponent implements OnInit {
 
   
   safeSrcMaps: SafeResourceUrl | null = null; // Initialisation de safeSrcMaps à null
+  
 
   constructor(
     private hotelservice: HotelService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private photoservice: PhotoService,
-    private chambreservice:ChambreService
+    private chambreservice:ChambreService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -54,5 +56,9 @@ export class HotelDetailsComponent implements OnInit {
         // Gérez le cas où idHotelParam est null, par exemple, redirigez l'utilisateur ou affichez un message d'erreur.
       }
     });
+  }
+
+  goToBooking() {
+    this.router.navigate(['/booking']); 
   }
 }

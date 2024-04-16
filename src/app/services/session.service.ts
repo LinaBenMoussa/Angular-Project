@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SessionService {
   private userIdKey = 'null';
   private userNameKey = 'null';
-  private roleKey = 'null'; 
+  private roleKey = 'null';
 
   constructor() { }
 
@@ -26,7 +26,7 @@ export class SessionService {
     if (role !== null) {
       sessionStorage.setItem(this.roleKey, role.toString());
     } else {
-      sessionStorage.removeItem(this.roleKey); 
+      sessionStorage.removeItem(this.roleKey);
     }
   }
 

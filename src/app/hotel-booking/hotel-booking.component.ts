@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../Models/Reservation.model';
 import { ReservationService } from '../services/reservation.service';
+import { SessionService } from '../services/session.service';
 declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angular
 
 @Component({
@@ -11,10 +12,19 @@ declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angul
 export class HotelBookingComponent implements OnInit {
   currentStep: number = 0;
   tabcount: number = 0;
+  startDate: Date|null = null;
+  endDate: Date|null = null; 
   reservation: Reservation = {} as Reservation;
   events: string[] = [];
-  constructor(private reservationService: ReservationService) { 
+  minDateStartDate: string = new Date().toLocaleDateString('fr-ca');
+  minDateEndDate: string = new Date().toLocaleDateString('fr-ca');
+  modalOpen: boolean = false;
+  modalText: string = "Contenu de la modal";
+  roomList: any[] = ['1', '2', '3'];
 
+ 
+  
+  constructor(private session: SessionService,private reservationService: ReservationService) { 
   }
   ngOnInit(): void {
     $('#donation_next').on('click', (e: Event) => this.onNextClick(e));
@@ -33,6 +43,7 @@ export class HotelBookingComponent implements OnInit {
     this.tabcount += 1;
   }
 
+
   onBackPressed(event: Event): void {
     event.preventDefault();
 
@@ -47,20 +58,32 @@ export class HotelBookingComponent implements OnInit {
 
 createReservation(){
   let reservation= {
-    id_client: 1,
-    dateDebut: new Date(),
-    dateFin: new Date(),
-    id_chambre: 1 
+    id_client: +(this.session.getUserId()??'0'),
+    dateDebut: this.startDate,
+    dateFin: this.endDate,
+    id_chambre: 2 
   } as Reservation;
- this.reservationService.createReservation(reservation).subscribe(
+  this.openModal();
+  this.reservationService.createReservation(reservation).subscribe(
   (data: Reservation) => {
-    this.reservation = data;
+    this.reservation = data; 
+    this.startDate = null;
+    this.endDate = null;
+    this.openModal();
+    
      },
  
  (error) => {
    console.log('Erreur lors du chargement de reservation :', error);
  }
-)}
 
+);this.openModal();}
+openModal() {
+  this.modalOpen = true;
+}
+
+closeModal() {
+  this.modalOpen = false;
+}
 }
 
