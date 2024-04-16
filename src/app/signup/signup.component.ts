@@ -4,6 +4,7 @@ import { Compte } from '../Models/Compte.model';
 import { Client } from '../Models/Client.model';
 
 import { AuthService } from '../services/authenticate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ import { AuthService } from '../services/authenticate.service';
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
-  constructor(private fb: FormBuilder, private authService: AuthService) { }
+  constructor(private router: Router, private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
@@ -56,7 +57,7 @@ export class SignupComponent implements OnInit {
           this.authService.registerClient(client).subscribe(
             (response) => {
               console.log("la reponse est ",response); // Gérez la réponse du backend ici
-              // Réinitialisez le formulaire après l'enregistrement，
+              this.router.navigate(['/login']);
               this.signupForm.reset();
             }
           )

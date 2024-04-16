@@ -8,6 +8,14 @@
     padding-left: 445px;
 }
 .hotelImage{
-    height: 200px;
-    width: 300px;
+    height: 250px;
+    width: 365px;
+    /* object-fit: cover; */
+}
+.page-banner{
+    height: 100px;
+}
+.banner-one_form-box{
+    margin: 0%;
+    padding: 2%;
 }
