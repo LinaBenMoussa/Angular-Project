@@ -1,5 +1,5 @@
 .banner-one_form-box{
-    margin-left: 40px;
+    margin-left: 100px;
 }
 .banner-one_form-box{
     padding-right: 25px;
@@ -10,12 +10,22 @@
 .hotelImage{
     height: 250px;
     width: 365px;
-    /* object-fit: cover; */
 }
 .page-banner{
-    height: 100px;
+    height: 20px;
+    margin-top: -5%;
 }
 .banner-one_form-box{
     margin: 0%;
     padding: 2%;
+}
+.auto-container{
+    margin-top: -1%;
+    /* margin-bottom: 6%; */
+}
+.booking-two{
+    margin-left: 6%;
+}
+.travel-form{
+    margin-left: 5%;
 }
