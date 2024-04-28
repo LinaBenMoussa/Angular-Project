@@ -30,12 +30,12 @@
 			<div class="row clearfix">
 				<div class="col-lg-9 col-md-9 col-sm-12">
 					<div class="image">
-						<a class="lightbox-image" href="/assets/images/hotels/{{photos[0]}}"><img src="/assets/images/hotels/{{photos[0].url}}" alt="" /></a>
+						<a class="lightbox-image" href="/assets/images/hotels/{{photos[0]}}"><img style="height: 620px;" src="/assets/images/hotels/{{photos[0].url}}" alt="" /></a>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-3 col-sm-12">
+				<div  class="col-lg-3 col-md-3 col-sm-12">
 					<div *ngFor="let photo of photos.slice(1, 4)">
-						<a class="lightbox-image" href="/assets/images/hotels/{{ photo }}"><img src="/assets/images/hotels/{{ photo.url }}" alt="" /></a>
+						<a class="lightbox-image" href="/assets/images/hotels/{{ photo }}"><img  src="/assets/images/hotels/{{ photo.url }}" alt="" /></a>
 					  </div>
 					
 					
@@ -49,13 +49,7 @@
 	<section class="hotel-detail">
 		<div class="auto-container">
 			<div class="row clearfix">
-				<div> 
-					<button (click)="goToBooking()" class="btn-style-two theme-btn" id="donation_next">
-					<span class="btn-wrap">
-						<span class="text-one">Book</span>
-						<span class="text-two">Book</span>
-					</span>
-				</button></div>
+				
 				<!-- Left Column -->
 				<div class="left-column col-lg-8 col-md-12 col-sm-12">
 					<h2>OVERVIEW</h2>
@@ -157,22 +151,21 @@
 								</ul>
 								<ul class="room-block_one-list">
 									<li>Free Wi-Fi</li>
-									<li>AC</li>
 									<li>Toiletries</li>
-									<li>Mini Bar</li>
 									<li>No Breakfast</li>
 								</ul>
 								<div class="price-box">
 									<div class="price">$ {{chambre.prix}} <span>/ night</span></div>
 									<!-- Button Box -->
-									<div class="button-box">
-										<a class="btn-style-two theme-btn" href="hotel-booking.html">
-											<div class="btn-wrap">
-												<span class="text-one">Book Now</span>
-												<span class="text-two">Book Now</span>
-											</div>
-										</a>
-									</div>
+										<div> 
+											<button (click)="goToBooking()" class="btn-style-two theme-btn" id="donation_next">
+												<span class="btn-wrap">
+													<span class="text-one">Book</span>
+													<span class="text-two">Book</span>
+												</span>
+											</button>
+										</div>
+										
 								</div>
 							</div>
 						</div>
@@ -212,19 +205,7 @@
 						</div>
 					</div>
 
-					<!-- Pagination Outer -->
-					<div class="pagination-outer text-right">
-						<ul class="paginations">
-							<li><a href="#"><span class="flaticon-left-arrow-2"></span></a></li>
-							<li class="active"><a href="#">01</a></li>
-							<li><a href="#">02</a></li>
-							<li><a href="#">03</a></li>
-							<li>...</li>
-							<li><a href="#">10</a></li>
-							<li><a href="#"><span class="flaticon-next-2"></span></a></li>
-						</ul>
-					</div>
-
+					
 					<!-- Hotel Detail Policies -->
 					<div class="hotel-detail_policies">
 						<h4>HOTEL POLICIES</h4>
@@ -245,158 +226,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Hotel Detail -->
 
-	<!-- Hotel Detail Nearby -->
-	<div class="hotel-detail_nearby">
-		<div class="auto-container">
-			<div class="row clearfix">
-				<!-- Title Column -->
-				<div class="title-column col-lg-3 col-md-12 col-sm-12">
-					<h4>NEARBY HOTELS</h4>
-				</div>
-				<!-- Carousel Column -->
-				<div class="carousel-column col-lg-9 col-md-12 col-sm-12">
-					<div class="three-item-carousel owl-carousel owl-theme">
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="#"><img src="D:/angularWorkspace/Hotel/src//assets/images/resource/hotel-6.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Hotel de Crillon</a></h5>
-									<div class="hotel-block_one-location">Place de la Concorde</div>
-									<div class="hotel-block_one-price">$ 900 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-7.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Le Bristol</a></h5>
-									<div class="hotel-block_one-location">Avenue d'Iéna</div>
-									<div class="hotel-block_one-price">$ 850 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-8.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Shangri-La Hotel</a></h5>
-									<div class="hotel-block_one-location">Faubourg Saint-Honoré</div>
-									<div class="hotel-block_one-price">$ 700 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-6.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Hotel de Crillon</a></h5>
-									<div class="hotel-block_one-location">Place de la Concorde</div>
-									<div class="hotel-block_one-price">$ 900 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-7.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Le Bristol</a></h5>
-									<div class="hotel-block_one-location">Avenue d'Iéna</div>
-									<div class="hotel-block_one-price">$ 850 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Hotel Block One -->
-						<div class="hotel-block_one">
-							<div class="hotel-block_one-inner">
-								<div class="hotel-block_one-image">
-									<div class="rating">
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-										<span class="fa fa-star"></span>
-									</div>
-									<a href="hotel-details.html"><img src="/assets/images/resource/hotel-8.jpg" alt="" /></a>
-								</div>
-								<div class="hotel-block_one-content">
-									<h5 class="hotel-block_one-heading"><a href="hotel-details.html">Shangri-La Hotel</a></h5>
-									<div class="hotel-block_one-location">Faubourg Saint-Honoré</div>
-									<div class="hotel-block_one-price">$ 700 / night</div>
-									<a class="hotel-block_one-arrow flaticon-next-2" href="hotel-details.html"></a>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Hotel Detail Nearby -->
 
 	<!-- CTA One -->
 	<section class="cta-one" style="background-image: url(/assets/images/background/2.jpg)">

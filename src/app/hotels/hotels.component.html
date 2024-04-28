@@ -365,7 +365,7 @@
 							class="page-header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap gap-2 gap-md-5">
 							<!-- Gallery Five Title Box -->
 							<div class="gallery-five_title-box">
-								<h4>Popular Hotels</h4>
+								<h4>List Hotels</h4>
 								<div class="text">Discover our top-rated hotels in the world's most desirable
 									destinations.</div>
 							</div>
@@ -400,8 +400,7 @@
 											<div class="hotel-block_one-inner">
 												<div class="hotel-block_one-image">
 													<div class="rating">
-														<span *ngFor="let _ of [].constructor(hotel.categorie)"
-															class="fa fa-star"></span>
+														
 
 													</div>
 													<a routerLink="/hotelDetails/{{hotel.id_hotel}}"><img
@@ -410,13 +409,10 @@
 												</div>
 												<div class="hotel-block_one-content">
 													<h5 class="hotel-block_one-heading"><a
-															routerLink="/hotelDetails/{{hotel.id_hotel}}">{{ hotel.nom
-															}}</a></h5>
-													<div class="hotel-block_one-location">{{
-														destinations[hotel.id_destination] }}
+															routerLink="/hotelDetails/{{hotel.id_hotel}}">{{ hotel.nom}}</a></h5><span style="margin-right: 13px; color: yellow;" class="fa fa-star"></span>{{hotel.categorie}}
+													<div class="hotel-block_one-location">{{destinations[hotel.id_destination] }}
 													</div>
-													<div class="hotel-block_one-price">{{ hotel.prix | number: '1.2-2'
-														}} / night
+													<div class="hotel-block_one-price">{{ hotel.prix | number: '1.2-2'}} / night
 													</div>
 													<a class="hotel-block_one-arrow flaticon-next-2"
 														routerLink="/hotelDetails/{{hotel.id_hotel}}"></a>
