@@ -5,20 +5,12 @@
     <!-- Page Banner -->
 	<section class="page-banner" style="background-image: url(/assets/images/background/17.jpg)">
 		<div class="auto-container">
-			<ul class="page-breadbrumbs">
-				<li><a href="#">Home</a></li>
-				<li>destination</li>
-				<li>hotels</li>
-			</ul>
+			
 			<h1 class="page-banner_title">{{hotelData.nom}}</h1>
 			<div class="banner-rating">
 				<i class="fas fa-map-marker-alt fa-fw"></i>
 				{{hotelData.localisation}} &ensp; | &ensp;
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
+				<span *ngFor="let star of [].constructor(hotelData.categorie)" class="fa fa-star"></span>
 			</div>
 		</div>
 	</section>
@@ -158,7 +150,7 @@
 									<div class="price">$ {{chambre.prix}} <span>/ night</span></div>
 									<!-- Button Box -->
 										<div> 
-											<button (click)="goToBooking()" class="btn-style-two theme-btn" id="donation_next">
+											<button (click)="goToBooking(hotelData.id_hotel, chambre.id_chambre)" class="btn-style-two theme-btn" id="donation_next">
 												<span class="btn-wrap">
 													<span class="text-one">Book</span>
 													<span class="text-two">Book</span>
@@ -174,36 +166,7 @@
 					
 
 					<!-- Comment -->
-					<div class="hotel-detail_review">
-						<div class="review-inner">
-							<h4>A Luxurious and Memorable Stay</h4>
-							<div class="text">“We had a wonderful stay at the Grand Elysée Hotel. The staff was extremely friendly and helpful, and the room was spacious, clean, and comfortable. The hotel's location is perfect, with many popular attractions and restaurants within walking distance. We also enjoyed the hotel's restaurant and spa, which were both excellent. Overall, it was a truly luxurious and memorable experience.”</div>
-							<div class="news-block_four-author">
-								<div class="news-block_four-author_image">
-									<img src="/assets/images/resource/author-9.jpg" alt="" />
-								</div>
-								Maria Garcia
-								<span>Client from Spain</span>
-							</div>
-							<div class="hotel-review_pattern" style="background-image: url(/assets/images/icons/pattern-3.png)"></div>
-						</div>
-					</div>
-
-					<!-- Comment -->
-					<div class="hotel-detail_review">
-						<div class="review-inner">
-							<h4>Exceptional Service & Facilities</h4>
-							<div class="text">“My wife and I stayed at the Grand Elysée Hotel for our honeymoon, and we couldn't have been happier with our experience. The hotel's service and facilities were exceptional, and the staff went above and beyond to make our stay special. We especially enjoyed the spa and fitness center, which were both top-notch. The location of the hotel is also excellent, with many popular attractions nearby. We highly recommend!”</div>
-							<div class="news-block_four-author">
-								<div class="news-block_four-author_image">
-									<img src="/assets/images/resource/author-10.jpg" alt="" />
-								</div>
-								Jonathan Smith
-								<span>Client from United States</span>
-							</div>
-							<div class="hotel-review_pattern" style="background-image: url(/assets/images/icons/pattern-3.png)"></div>
-						</div>
-					</div>
+					
 
 					
 					<!-- Hotel Detail Policies -->

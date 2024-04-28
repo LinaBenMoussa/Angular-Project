@@ -2,28 +2,7 @@
 <div class="page-wrapper">
 
 
-<<<<<<< HEAD
- <app-header></app-header>
 
-	<!-- Sticky/Fixed Nav -->
-	<div class="fixed_menu w-100">
-		<header class="header header_style_one"></header>
-	</div>
-
-	<!-- Mobile Responsive Menu -->
-	<div class="mr_menu d-lg-none">
-
-		<button type="button" class="mr_menu_close"><i class="fa fa-times"></i></button>
-		<div class="logo"></div> <!-- Keep this div empty. Logo will come here by JavaScript -->
-		<div class="mr_navmenu"></div> <!-- Keep this div empty. Menu will come here by JavaScript -->
-	</div>
-    <!-- End Main Header -->
-
-	<!-- Page Banner -->
-	<section class="page-banner" style="background-image: url(/assets/images/background/16.jpg)">
-		<div class="auto-container">
-			<ul class="page-breadbrumbs">
-=======
     <!-- Main Header -->
 
     <!-- Sticky/Fixed Nav -->
@@ -41,22 +20,18 @@
     <!-- End Main Header -->
 
     <!-- Page Banner -->
-    <section class="page-banner" margin-top:20px style="background-image: url(/assets/images/background/16.jpg)">
+    <section  class="page-banner" margin-top:20px style="background-image: url(/assets/images/background/16.jpg)">
         <div class="auto-container">
             <!-- <ul class="page-breadbrumbs">
->>>>>>> b5142f0e07fd1c359012bbdfd58cd3dbe5e9e0a7
 				<li><a href="#">Home</a></li>
 				<li>Hotel Booking</li>
 			</ul> -->
-            <h1 class="page-banner_title">Review Your Booking</h1>
+            <h1 style="margin-top: 100px;"  class="page-banner_title">Review Your Booking</h1>
         </div>
     </section>
     <!-- End Page Banner -->
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b5142f0e07fd1c359012bbdfd58cd3dbe5e9e0a7
 
 
     <!-- Tour Detail Two -->
@@ -74,7 +49,7 @@
                                 <div class="card-body">
                                     <ul>
                                         <li class="d-flex align-items-center justify-content-between mb-2"><span>Room
-                                                Charge</span> <span>$ 1300</span></li>
+                                                Charge</span> <span>$ {{Chambre.prix}}</span></li>
                                         <li class="d-flex align-items-center justify-content-between mb-2">
                                             <!-- <span>Discount <span class="badge bg-success">10%</span></span> <span> - $
                                                 130</span></li> -->
@@ -123,16 +98,12 @@
                                                 src="/assets/images/gallery/52.jpg" alt=""></a>
                                     </div>
                                     <div class="room-content">
-                                        <h5><a href="hotel-booking.html">GRAND ELYSÉE</a></h5>
+                                        <h5><a href="hotel-booking.html">{{Hotel.nom}}</a></h5>
                                         <div class="room-info mt-2">
-                                            <p class="mb-2"><i class="fas fa-map-marker-alt fa-fw"></i> 10 Rue de la
-                                                Paix 75001 Paris, France</p>
+                                            <p class="mb-2"><i class="fas fa-map-marker-alt fa-fw"></i> {{Hotel.localisation}}</p>
                                             <div class="room-rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
+                                                <span *ngFor="let i of [].constructor(Hotel.categorie)" class="fa fa-star"></span>
+                                               
                                             </div>
                                             <ul class="room-facilities flex-wrap flex-xl-nowrap">
                                                 <li>Free Wi-Fi</li>
@@ -165,16 +136,10 @@
                                             <tr>
 
 
-<<<<<<< HEAD
                                                  <td>
 
                                                     <input type="date" id="start" [(ngModel)]="startDate" name="trip-start" min="minDateStartDate" />
-=======
-                                                <td>
 
-                                                    <input type="date" id="start" [(ngModel)]="startDate"
-                                                        name="trip-start" min="minDateStartDate" />
->>>>>>> b5142f0e07fd1c359012bbdfd58cd3dbe5e9e0a7
 
                                                 </td>
                                                 <td>
@@ -183,20 +148,7 @@
 
                                                 </td>
                                                 <td>
-<<<<<<< HEAD
-                                                    <select class="select-location"
-														id="room" required>
-														<option
-															[value]="0" [selected]="true">Select
-														</option>
-														<option *ngFor="let room of roomList"
-															[value]="room.roomNumber">{{ room}}
-														</option>
-													</select>
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" value="0"/>
-=======
+
                                                     <select class="select-location" id="room" required>
                                                         <option [value]="0" [selected]="true">Select
                                                         </option>
@@ -207,7 +159,6 @@
                                                 </td>
                                                 <td>
                                                     <input type="number" class="form-control" value="0" />
->>>>>>> b5142f0e07fd1c359012bbdfd58cd3dbe5e9e0a7
                                                 </td>
 
 
@@ -253,7 +204,7 @@
                                                 <!-- Form Group -->
                                                 <div class="form-group">
                                                     <label class="form-label"><b>First Name</b></label>
-                                                    <span>Najla</span>
+                                                    <span>{{nom}}</span>
                                                     <!-- <input type="text" name="f-name" placeholder="First Name" required> -->
                                                 </div>
                                             </div>
@@ -262,7 +213,7 @@
                                                 <!-- Form Group -->
                                                 <div class="form-group">
                                                     <label class="form-label"><b>Last Name</b></label>
-                                                    <span>hnia</span>
+                                                    <span>{{prenom}}</span>
                                                     <!-- <input type="text" name="l-name" placeholder="Last Name" required> -->
                                                 </div>
                                             </div>
@@ -271,7 +222,7 @@
                                                 <!-- Form Group -->
                                                 <div class="form-group mb-0">
                                                     <label class="form-label"><b>Email Address</b></label>
-                                                    <span>najla@gmail.com</span>
+                                                    <span>email</span>
                                                     <!-- <input type="email" name="email" placeholder="Email Address" required> -->
                                                 </div>
                                             </div>
@@ -280,7 +231,7 @@
                                                 <!-- Form Group -->
                                                 <div class="form-group mb-0">
                                                     <label class="form-label"><b>Phone Number</b></label>
-                                                    <span>+216 22 222 222</span>
+                                                    <span>{{phone}}</span>
                                                     <!-- <input type="number" name="phone" placeholder="Phone Number" required> -->
                                                 </div>
                                             </div>
@@ -354,10 +305,6 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
-		</div>
-	</footer>
-=======
+
         </div>
     </footer>
->>>>>>> b5142f0e07fd1c359012bbdfd58cd3dbe5e9e0a7

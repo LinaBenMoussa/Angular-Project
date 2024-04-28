@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   
   { path: 'signup', component: SignupComponent },
-  { path: 'booking', component: HotelBookingComponent },
+  { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
   { path: 'images', component: ListeImageHotelComponent },
   { path: 'chambres', component: ListeChambreComponent },
 

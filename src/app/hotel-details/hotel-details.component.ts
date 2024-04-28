@@ -52,13 +52,11 @@ export class HotelDetailsComponent implements OnInit {
         this.chambreservice.getChambresByIdHotel(num).subscribe(data=>{
           this.chambres=data;
         }) ;
-      } else {
-        // Gérez le cas où idHotelParam est null, par exemple, redirigez l'utilisateur ou affichez un message d'erreur.
       }
     });
   }
 
-  goToBooking() {
-    this.router.navigate(['/booking']); 
-  }
+  goToBooking(idhotel: number,id_chambre:number) {
+    this.router.navigate(['/booking', idhotel,id_chambre]); 
+}
 }

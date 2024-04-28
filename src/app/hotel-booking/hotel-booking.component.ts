@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../Models/Reservation.model';
 import { ReservationService } from '../services/reservation.service';
 import { SessionService } from '../services/session.service';
+import { ChambreService } from '../services/chambre.service';
+import { ActivatedRoute } from '@angular/router';
+import { HotelService } from '../services/hotel.service';
+import { Chambre } from '../Models/Chambre.model';
+import { Hotel } from '../Models/Hotel.model';
 declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angular
 
 @Component({
@@ -21,16 +26,32 @@ export class HotelBookingComponent implements OnInit {
   modalOpen: boolean = false;
   modalText: string = "Contenu de la modal";
   roomList: any[] = ['1', '2', '3'];
-
- 
-  
-  constructor(private session: SessionService,private reservationService: ReservationService) { 
+  Hotel: Hotel = {} as Hotel;
+  Chambre: Chambre = {} as Chambre;
+  nom!:String;
+  prenom!:String;
+  email!:String;
+  phone!:String;
+  constructor(  private route: ActivatedRoute,private session: SessionService,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService) {
+    this.nom = this.session.getUserName() || ''; 
+    this.prenom = this.session.getUserName() || ''; 
+    this.email = this.session.getUserName() || ''; 
+    this.phone = this.session.getUserName() || ''; 
   }
   ngOnInit(): void {
     $('#donation_next').on('click', (e: Event) => this.onNextClick(e));
     $('#donation_back').on('click', (e: Event) => this.onBackPressed(e));
-  }
+    const idHotel = this.route.snapshot.params['idhotel'];
+    const idChambre = this.route.snapshot.params['idchambre'];
 
+    this.CS.getHotelById(idHotel).subscribe(hotel => {
+      this.Hotel = hotel;
+    });
+    this.CC.getChambreById(idChambre).subscribe(chambre => {
+      this.Chambre = chambre;
+      console.log("chambre:",this.Chambre);
+    })
+  }
   onNextClick(event: Event): void {
     event.preventDefault();
 
@@ -86,4 +107,6 @@ closeModal() {
   this.modalOpen = false;
 }
 }
+
+
 

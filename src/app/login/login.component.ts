@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           }
         },
         (error) => {
-          console.error(error); // Gérez les erreurs ici, par exemple, affichage d'un message d'erreur à l'utilisateur
+          console.error(error); 
         }
       );
     }
