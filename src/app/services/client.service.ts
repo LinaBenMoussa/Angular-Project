@@ -15,10 +15,12 @@ export class ClientService {
     return this.http.get<Client[]>(this.baseUrl);
   }
 
-  getClientById(id: number): Observable<Client> {
+  getClientById(id: string|null): Observable<Client> {
     return this.http.get<Client>(`${this.baseUrl}/${id}`);
   }
-
+  getClientByIdCompte(id: string|null): Observable<Client> {
+    return this.http.get<Client>(`${this.baseUrl}/GetClientByIdCompte/${id}`);
+  }
   createClient(client: Client): Observable<Client> {
     return this.http.post<Client>(this.baseUrl, client);
   }

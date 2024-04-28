@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HotelService } from '../services/hotel.service';
 import { Chambre } from '../Models/Chambre.model';
 import { Hotel } from '../Models/Hotel.model';
+import { ClientService } from '../services/client.service';
 declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angular
 
 @Component({
@@ -30,13 +31,10 @@ export class HotelBookingComponent implements OnInit {
   Chambre: Chambre = {} as Chambre;
   nom!:String;
   prenom!:String;
-  email!:String;
-  phone!:String;
-  constructor(  private route: ActivatedRoute,private session: SessionService,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService) {
-    this.nom = this.session.getUserName() || ''; 
-    this.prenom = this.session.getUserName() || ''; 
-    this.email = this.session.getUserName() || ''; 
-    this.phone = this.session.getUserName() || ''; 
+  email:string|null = null;
+  phone!:number;
+  constructor(  private route: ActivatedRoute,private session: SessionService,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService,private clientService:ClientService) {
+   this.email=this.session.getUserName();
   }
   ngOnInit(): void {
     $('#donation_next').on('click', (e: Event) => this.onNextClick(e));
@@ -50,6 +48,11 @@ export class HotelBookingComponent implements OnInit {
     this.CC.getChambreById(idChambre).subscribe(chambre => {
       this.Chambre = chambre;
       console.log("chambre:",this.Chambre);
+    })
+    this.clientService.getClientByIdCompte(this.session.getUserId()).subscribe(client => {
+      this.nom = client.name;
+      this.prenom = client.prenom;
+      this.phone = client.telephone;
     })
   }
   onNextClick(event: Event): void {

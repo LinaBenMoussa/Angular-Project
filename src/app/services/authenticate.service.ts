@@ -8,7 +8,7 @@ import { Client } from '../Models/Client.model';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'https://localhost:44326/api/Comptes'; // Mettez à jour l'URL avec votre API endpoint
+  private baseUrl = 'https://localhost:44326/api/Comptes'; 
 
   constructor(private http: HttpClient) {}
 
