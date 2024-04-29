@@ -12,9 +12,9 @@
             <h5 class="card-title">{{destination.nom}}</h5>
             <div class="d-flex justify-content-between">
               <!-- Bouton "Éditer" -->
-              <button type="button" class="btn btn-warning" >Éditer</button>
+              <button type="button" class="btn btn-warning" routerLink="/edit-destination/{{destination.id_destination}}" >Edit</button>
               <!-- Bouton "Supprimer" -->
-              <button type="button" class="btn btn-danger" >DELETE</button>
+              <button type="button" class="btn btn-danger" (click)="delete(destination.id_destination)" >DELETE</button>
             </div>
           </div>
         </div>

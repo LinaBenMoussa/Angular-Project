@@ -4,17 +4,17 @@
     <h2 class="text-center mb-4"> Edit destination</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
+        <form [formGroup]="destinationForm" (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label for="nom" class="form-label">Destination name</label>
-            <input type="text" class="form-control" id="nom" placeholder="Entrez le nom de la destination" required>
-          </div>
+            <input type="text" formControlName="nom"  class="form-control" id="nom" placeholder="Entrez le nom de la destination" required>
+          </div> 
           <div class="mb-3">
             <label for="img" class="form-label">Picture</label>
             <input type="file" class="form-control" id="img" accept="image/*" required>
           </div>
 
-          <button type="submit" class="btn btn-primary">Edit</button>
+          <button type="submit" class="btn btn-primary" >Edit</button>
         </form>
       </div>
     </div>

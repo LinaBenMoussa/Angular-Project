@@ -15,6 +15,8 @@ import { AddDestinationComponent } from './admin/add-destination/add-destination
 import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 import { ListeImageHotelComponent } from './admin/liste-image-hotel/liste-image-hotel.component';
 import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
+import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
@@ -23,15 +25,18 @@ const routes: Routes = [
   
   { path: 'signup', component: SignupComponent },
   { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
-  { path: 'images', component: ListeImageHotelComponent },
-  { path: 'chambres', component: ListeChambreComponent },
+  { path: 'images/:idhotel', component: ListeImageHotelComponent },
+
+  { path: 'chambres/:idhotel', component: ListeChambreComponent },
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'list-destination', component: ListDestinationComponent },
   { path: 'list-hotel', component: ListHotelComponent },
   { path: 'add-destination', component: AddDestinationComponent },
-  { path: 'edit-destination', component: EditDestinationComponent },
+  { path: 'edit-destination/:id', component: EditDestinationComponent },
   { path: 'edit-hotel/:id', component: EditHotelComponent },
+  { path: 'add-chambre/:idhotel', component: AddChambreComponent },
+
   { path: 'add-hotel', component: AddHotelComponent },
 
   { path: 'hotelDetails/:idHotel', component: HotelDetailsComponent },

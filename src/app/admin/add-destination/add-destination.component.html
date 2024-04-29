@@ -4,18 +4,24 @@
     <h2 class="text-center mb-4"> Add a destination</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
+        <form [formGroup]="destinationForm" (ngSubmit)="submitForm()">
           <div class="mb-3">
             <label for="nom" class="form-label">Destination name</label>
-            <input type="text" class="form-control" id="nom" placeholder="Entrez le nom de la destination" required>
+            <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Enter destination name" required>
+            <!-- Use bracket notation to safely access the 'required' error -->
+            <div *ngIf="destinationForm.get('nom')?.errors?.['required']" class="text-danger">
+              Name is required
+            </div>
           </div>
           <div class="mb-3">
             <label for="img" class="form-label">Picture</label>
-            <input type="file" class="form-control" id="img" accept="image/*" required>
+            <input type="file" (change)="onFileSelect($event)" class="form-control" id="img" accept="image/*" required>
+            <span *ngIf="destinationForm.get('img')?.value">{{ destinationForm.get('img')?.value.name }}</span>
           </div>
-
           <button type="submit" class="btn btn-primary">Add</button>
         </form>
+
+
       </div>
     </div>
   </div>

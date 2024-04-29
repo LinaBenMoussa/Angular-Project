@@ -18,7 +18,10 @@
              
               <div>
                 <button type="button" [routerLink]="'/edit-hotel/' + hotel.id_hotel" class="btn btn-warning me-2">Edit</button>
-                <button type="button" (click)="onDelete(hotel.id_hotel)" class="btn btn-danger">DELETE</button>
+                <button type="button" [routerLink]="'/images/'+hotel.id_hotel" class="btn btn-primary me-2">Pictures</button>
+                <button type="button" [routerLink]="'/chambres/'+hotel.id_hotel" class="btn btn-primary me-2">Rooms</button>
+
+                <button type="button" (click)="onDelete(hotel.id_hotel)" class="btn btn-danger" me-2>Delete</button>
               </div>
             </div>
           </div>

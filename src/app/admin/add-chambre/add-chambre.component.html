@@ -1,28 +1,37 @@
 <app-navbar></app-navbar>
-
 <div class="main-content">
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Add a Room</h2>
+    <h2 class="text-center mb-4">Add a Hotel</h2>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
+        <form [formGroup]="chambreForm" (ngSubmit)="onSubmit()">
+         
           <div class="mb-3">
-            <label for="nb_personne" class="form-label">Number of Persons</label>
-            <input type="number" class="form-control" id="nb_personne" placeholder="Enter number of persons" required>
+            <label for="nom" class="form-label">Room Name</label>
+            <input type="text" formControlName="nom" class="form-control" id="nom" placeholder="Enter hotel name" required>
           </div>
           <div class="mb-3">
-            <label for="hotel" class="form-label">Hotel</label>
-            <select class="form-select" id="hotel" required>
-              <option selected disabled>Select hotel</option>
-              <!-- Vous pouvez remplir cette liste déroulante avec les hôtels disponibles -->
-              <option>Hotel 1</option>
-              <option>Hotel 2</option>
-              <option>Hotel 3</option>
-            </select>
+            <label for="categorie" class="form-label">guests</label>
+            <input type="number" formControlName="nbre_personnes" class="form-control" id="categorie" placeholder="Enter category" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="localisation" class="form-label">Surface</label>
+            <input type="text" formControlName="surface" class="form-control" id="localisation" placeholder="Enter location" required>
+          </div>
+          <div class="mb-3">
+            <label for="id_hotel" class="form-label">Hotel</label><br>
+              <input type="text"  [value]="hotel.nom">
+          </div>
+          
+          <div class="mb-3">
+            <label for="img" class="form-label">Picture</label>
+            <input type="file" (change)="onFileSelect($event)" class="form-control" id="img" accept="image/*" required>
+            <span *ngIf="chambreForm.get('img')?.value">{{ chambreForm.get('img')?.value.name }}</span>
           </div>
           <div class="mb-3">
             <label for="prix" class="form-label">Price</label>
-            <input type="number" class="form-control" id="prix" placeholder="Enter price" required>
+            <input type="number" formControlName="prix" class="form-control" id="prix" placeholder="Enter price" required>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

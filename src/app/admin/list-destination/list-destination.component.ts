@@ -25,5 +25,9 @@ export class ListDestinationComponent {
       }
     );
   }
-  
+  delete(id:number){
+    this.destinationService.deleteDestination(id).subscribe(()=>
+      {this.loadDestinations()}
+    )
+  }
 }
