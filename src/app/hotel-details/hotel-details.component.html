@@ -5,7 +5,7 @@
     <!-- Page Banner -->
 	<section class="page-banner" style="background-image: url(/assets/images/background/17.jpg)">
 		<div class="auto-container">
-			
+
 			<h1 class="page-banner_title">{{hotelData.nom}}</h1>
 			<div class="banner-rating">
 				<i class="fas fa-map-marker-alt fa-fw"></i>
@@ -29,8 +29,8 @@
 					<div *ngFor="let photo of photos.slice(1, 4)">
 						<a class="lightbox-image" href="/assets/images/hotels/{{ photo }}"><img  src="/assets/images/hotels/{{ photo.url }}" alt="" /></a>
 					  </div>
-					
-					
+
+
 				</div>
 			</div>
 		</div>
@@ -41,13 +41,13 @@
 	<section class="hotel-detail">
 		<div class="auto-container">
 			<div class="row clearfix">
-				
+
 				<!-- Left Column -->
 				<div class="left-column col-lg-8 col-md-12 col-sm-12">
 					<h2>OVERVIEW</h2>
 					<p>Situated just steps from the iconic Place Vendôme, the hotel offers easy access to some of the city's most famous attractions, including the Louvre Museum, the Champs-Élysées, the Arc de Triomphe, and the famous Eiffel Tower view.</p>
-					
-					
+
+
 					<h3>LOCATION</h3>
 					<!-- Map Three -->
 					<div class="map-three">
@@ -87,7 +87,7 @@
 								<div class="price-box">
 									<div class="price">$ {{chambre.prix}} <span>/ night</span></div>
 									<!-- Button Box -->
-										<div> 
+										<div>
 											<button (click)="goToBooking(hotelData.id_hotel, chambre.id_chambre)" class="btn-style-two theme-btn" id="donation_next">
 												<span class="btn-wrap">
 													<span class="text-one">Book</span>
@@ -95,16 +95,16 @@
 												</span>
 											</button>
 										</div>
-										
+
 								</div>
 							</div>
 						</div>
 					</div>
 
-					
+
 
 					<!-- Comment -->
-					
+
 
 				</div>
 
@@ -113,29 +113,7 @@
 	</section>
 
 
-	<!-- CTA One -->
-	<section class="cta-one" style="background-image: url(/assets/images/background/2.jpg)">
-		<div class="auto-container">
-			<!-- Title Box -->
-			<div class="cta-one_title-box">
-				<h1 class="cta-one_heading">start your adventure</h1>
-				<div class="cta-one_text">Sign up for our newsletter and receive exclusive travel deals, insider tips, and destination <br> inspiration. Don't miss out on the adventure - join our mailing list today!</div>
 
-				<!-- Subscribe Box -->
-				<div class="subscribe-box">
-					<form method="post" action="https://wpthemebooster.com/demo/themeforest/html/vacasky/contact.html">
-						<div class="form-group">
-							<input type="email" name="email" value="" placeholder="Enter your email address here ..." required>
-							<button class="submit-btn theme-btn">
-								Subscribe
-							</button>
-						</div>
-					</form>
-				</div>
-
-			</div>
-		</div>
-	</section>
   </div>
 </body>
 	<!-- End CTA One -->

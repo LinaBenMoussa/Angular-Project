@@ -17,7 +17,7 @@
             <li class="menu-item menu-item-has-children"><a href="#">Hotels</a>
               <ul class="sub-menu">
                 <li class="menu-item"><a routerLink="/hotels">Hotel</a></li>
-                <li class="menu-item"><a routerLink="/booking">Hotel Booking</a></li>
+
               </ul>
             </li>
 
@@ -53,16 +53,16 @@
             </li> -->
           </ul>
         </div>
-        <div *ngIf="!isLogin()" class="other_elements_wrapper d-flex align-items-center gap-4">
+        <div *ngIf="!isLogin()" class="other_elements_wrapper d-flex align-items-center gap-4" style="height: 40px;">
           <!-- Button Box -->
           <div class="button-box d-none d-sm-block">
-            <a class="btn-style-one theme-btn" routerLink="/login" style="    width: 126px; height: 43px; ">
+            <a class="btn-style-one theme-btn" routerLink="/login" style=" background-color: #28A745; color: white;   width: 126px; height: 43px; ">
               <div class="btn-wrap">
-                <span class="text-one" style="    margin-top: -5px;">Sign In</span>
+                <span class="text-one" style="   margin-top: -5px; width: 72px; height: 24px;">Sign In</span>
                 <span class="text-two" style="    margin-top: -2px;">Sign In</span>
               </div>
             </a>
-            <a class="btn-style-two theme-btn" href="login.html">
+            <a class="btn-style-two theme-btn" href="login.html" style="background-color: #28A745; color: white;">
               <div class="btn-wrap">
                 <span class="text-one">Sign In</span>
                 <span class="text-two">Sign In</span>
@@ -78,6 +78,6 @@
           </div>
         </div>
         <div class="userName" *ngIf="isLogin()">{{userName}}</div>
-        <button *ngIf="isLogin()" class="btn btn-danger logout" (click)="logout()">Logout</button></div></div>
+        <button *ngIf="isLogin()" class="btn btn-danger" (click)="logout()">Logout</button></div></div>
   </div>
 </header>
