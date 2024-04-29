@@ -1,27 +1,34 @@
-# Hotel
+#  Nom du Projet
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Agence Gestion Hotel 
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ce projet est une plateforme de gestion pour agences hôtelières permettant de gérer les réservations, les informations des hôtels, et la communication avec les clients. Il vise à optimiser les processus internes et améliorer l'expérience utilisateur.
 
-## Code scaffolding
+## Fonctionnalités
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Gestion des hôtels et des chambres
+- Système de réservation en ligne
+- Recherche d'hôtel par destination
+- Filtrage des hôtels par prix 
+- Tableau de bord administratif pour la gestion des réservations
 
-## Build
+## Technologies Utilisées
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+- .NET Core
+- SQL Server (server management studio management studip 19)
+- Bootstrap et CSS pour le design front-end
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Cloner le dépôt : https://github.com/LinaBenMoussa/Angular-Project.git
 
-## Running end-to-end tests
+2. Naviguer dans le dossier du projet : cd /Angular-Project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Installer les dépendances : npm install
 
-## Further help
+4. Lancer le projet : ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Ouvrir le navigateur à l'adresse `http://localhost:4200/`.

@@ -41,7 +41,7 @@
 								<div class="travel-form">
 									<form [formGroup]="searchForm" (ngSubmit)="searchHotel()">
 										<div class="row clearfix">
-											<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+											<div class="col-lg-5 col-md-6 col-sm-6 form-group">
 												<div class="form-group_inner">
 													<label for="destination">Destination</label>
 													<select class="select-location" formControlName="destination"
@@ -55,7 +55,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 form-group">
+											<div class="col-lg-5 col-md-4 col-sm-6 form-group">
 												<div class="form-group_inner">
 													<label>Price</label>
 													<div class="row clearfix">
@@ -79,16 +79,12 @@
 											</div>
 
 											<!-- Filter -->
-											<button class="btn-style-two theme-btn" type="submit"
-												(click)="searchHotel()">
-												<span class="btn-wrap">
-													<span class="text-one">Search</span>
-													<span class="text-two">Search</span>
-												</span>
-											</button>
+											<div class="col-lg-2 col-md-2 col-sm-6 form-group">
 
-										</div>
-										<!-- <pre>{{ searchForm.value | json }}</pre>  -->
+											
+												<button type="submit" (click)="searchHotel()" class="btn btn-primary" style="padding-top: 15px;padding-bottom: 15px;padding-left: 20px;padding-right: 20px;margin-top: 15px;">Search</button>
+										
+										</div></div>
 									</form>
 
 								</div>
@@ -424,6 +420,8 @@
 				<!-- destination -->
 				<!-- 3 premiers images -->
 				<div class="container">
+					<h4>List Destinations</h4><br><br>
+
 					<div class="row">
 
 						<div  *ngFor="let destination of alldestinations.slice(0, 2)" (click) ="searchHotelsByDestination(destination.id_destination)" class="col-md-6"

@@ -16,6 +16,7 @@ import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 import { ListeImageHotelComponent } from './admin/liste-image-hotel/liste-image-hotel.component';
 import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
 import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
+import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'edit-destination/:id', component: EditDestinationComponent },
   { path: 'edit-hotel/:id', component: EditHotelComponent },
   { path: 'add-chambre/:idhotel', component: AddChambreComponent },
+  { path: 'edit-chambre/:idchambre', component: EditChambreComponent },
 
   { path: 'add-hotel', component: AddHotelComponent },
 

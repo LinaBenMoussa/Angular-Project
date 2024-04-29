@@ -14,8 +14,13 @@
             <h5 class="card-title">{{image.url}} </h5>
             <p class="card-text">Hôtel: {{hotels[image.id_hotel]}} </p>
             <p class="card-text">ID: {{image.id_photo}} </p>
+            <button class="btn btn-danger" (click)="onDelete(image.id_photo)">Delete</button>
           </div>
         </div>
+      </div>
+      <div class=" col-md-3 mb-2" style="margin-top: 100px; margin-left: 100px;">
+        <button class="btn btn-primary" (click)="fileInput.click()">Add picture</button>
+        <input type="file" #fileInput style="display: none;" (change)="onFileSelect($event)">
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
 .banner-one_form-box{
-    margin-left: 100px;
+    margin-left: 200px;
 }
 .banner-one_form-box{
-    padding-right: 25px;
+    padding-right: 30px;
 }
 .text-two{
     padding-left: 445px;
@@ -19,10 +19,7 @@
     margin: 0%;
     padding: 2%;
 }
-.auto-container{
-    margin-top: -1%;
-    /* margin-bottom: 6%; */
-}
+
 .booking-two{
     margin-left: 6%;
 }

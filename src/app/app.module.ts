@@ -30,6 +30,7 @@ import { EditDestinationComponent } from './admin/edit-destination/edit-destinat
 import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
 import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
+import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 @NgModule({
   declarations: [ListDestinationComponent,AddChambreComponent,ListeChambreComponent,
     AppComponent,
@@ -51,7 +52,8 @@ import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.compo
      AddDestinationComponent,
      EditDestinationComponent,
      EditHotelComponent,
-     AddHotelComponent
+     AddHotelComponent,
+     EditChambreComponent,
   ],
   imports: [MatSelectModule,MatInputModule,MatFormFieldModule,
     BrowserModule,

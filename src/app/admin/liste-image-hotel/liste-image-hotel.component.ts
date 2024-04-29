@@ -17,7 +17,17 @@ export class ListeImageHotelComponent implements OnInit {
   idhotel = this.route.snapshot.params['idhotel'];
 
   constructor(private route: ActivatedRoute,private photoService: PhotoService, private hotelService: HotelService) { }
-
+  onFileSelect(event: any): void {
+    const file = event.target.files[0];
+    const photo={url:file.name,id_hotel:this.idhotel} as Photo;
+    if (file) {
+      this.photoService.createPhoto(photo).subscribe(photo => {
+        this.getImages();
+        this.loadHotels();
+      });
+      console.log('Nom du fichier sélectionné :', file.name);
+    }
+  }
   ngOnInit(): void {
 
     this.getImages();
@@ -47,5 +57,10 @@ export class ListeImageHotelComponent implements OnInit {
         console.error('Error fetching hotels:', error);
       }
     );
+  }
+  onDelete(id: number): void {
+    this.photoService.deletePhoto(id).subscribe(() => {
+      this.getImages();
+    });
   }
 }
