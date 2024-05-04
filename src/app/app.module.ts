@@ -31,6 +31,8 @@ import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
 import { AddHotelComponent } from './admin/add-hotel/add-hotel.component';
 import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [ListDestinationComponent,AddChambreComponent,ListeChambreComponent,
     AppComponent,
@@ -60,7 +62,7 @@ import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.componen
     AppRoutingModule,HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule, MatIconModule
+    MatButtonModule, MatIconModule,MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

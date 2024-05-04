@@ -3,11 +3,13 @@ import { Reservation } from '../Models/Reservation.model';
 import { ReservationService } from '../services/reservation.service';
 import { SessionService } from '../services/session.service';
 import { ChambreService } from '../services/chambre.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelService } from '../services/hotel.service';
 import { Chambre } from '../Models/Chambre.model';
 import { Hotel } from '../Models/Hotel.model';
 import { ClientService } from '../services/client.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angular
 
 @Component({
@@ -33,7 +35,8 @@ export class HotelBookingComponent implements OnInit {
   prenom!:String;
   email:string|null = null;
   phone!:number;
-  constructor(  private route: ActivatedRoute,private session: SessionService,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService,private clientService:ClientService) {
+  constructor(     private router: Router
+,    private snackBar: MatSnackBar, private route: ActivatedRoute,private session: SessionService,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService,private clientService:ClientService) {
    this.email=this.session.getUserName();
   }
   ngOnInit(): void {
@@ -79,8 +82,17 @@ export class HotelBookingComponent implements OnInit {
 
     this.tabcount -= 1;
   }
+  showSuccessAlert(): void {
+    this.snackBar.open('La réservation est accomplie!', 'Fermer', {
+      duration: 3000, // Durée de l'alerte en millisecondes (3 secondes dans cet exemple)
+    });
+  }
+navigate(){
+  this.router.navigate(['/home']); 
 
+}
 createReservation(){
+
   let reservation= {
     id_client: +(this.session.getUserId()??'0'),
     dateDebut: this.startDate,
