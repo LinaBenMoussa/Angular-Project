@@ -57,6 +57,9 @@ export class HotelDetailsComponent implements OnInit {
   }
 
   goToBooking(idhotel: number,id_chambre:number) {
-    this.router.navigate(['/booking', idhotel,id_chambre]); 
+    if(sessionStorage.getItem('user')!=null){
+      this.router.navigate(['/booking', idhotel,id_chambre]);
+    }
+    this.router.navigate(['/login']); 
 }
 }

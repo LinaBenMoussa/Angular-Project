@@ -1,0 +1,144 @@
+
+	
+<!-- Mirrored from wpthemebooster.com/demo/themeforest/html/vacasky/destination.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Apr 2024 10:14:16 GMT -->  
+
+<body>
+ 
+<div class="page-wrapper">
+	<app-header></app-header>
+     	
+ 		<!-- Sticky/Fixed Nav -->
+	<div class="fixed_menu w-100">
+		<header class="header header_style_one"></header>
+	</div>
+
+	<!-- Mobile Responsive Menu -->
+	<div class="mr_menu d-lg-none">
+		
+		<button type="button" class="mr_menu_close"><i class="fa fa-times"></i></button>
+		<div class="logo"></div> <!-- Keep this div empty. Logo will come here by JavaScript -->
+		<div class="mr_navmenu"></div> <!-- Keep this div empty. Menu will come here by JavaScript -->
+	</div>
+    <!-- End Main Header -->
+	
+	<!-- Page Banner -->
+	<section class="page-banner" style="background-image: url(assets/images/background/5.jpg)">
+		<div class="auto-container">
+			<ul class="page-breadbrumbs">
+				<li><a href="#">Home</a></li>
+				<li>Destinations</li>
+			</ul>
+			<h1 class="page-banner_title">DESTINATIONS</h1>
+		</div>
+	</section>
+	<!-- End Page Banner -->
+
+	<!-- Gallery Five -->
+	<section class="gallery-five">
+		<div class="auto-container">
+			<div class="d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap gap-2 gap-md-5">
+				<!-- Title Box -->
+				<div class="title-box">
+					<h4>DESTINATIONS <span>( {{destinations.length}} )</span></h4>
+				</div>
+
+				<!-- Gallery Search Box -->
+				<div class="gallery-search_box">
+					<!-- Search Box -->
+					<div class="search-box mb-0">
+						
+							<div class="form-group">
+								<input type="search" name="search-field" value="" placeholder="Search..." required>
+								<button (click)="loadDestinations()"><span class="icon fa fa-search"></span></button>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+
+			<!-- Filter -->
+			
+
+			<!--Isotope Galery-->
+            <div class="sortable-masonry">
+                
+                <div *ngFor="let destination of destinations" class="items-container row clearfix">
+
+					<!-- Gallery Block Two -->
+					<div class="gallery-block_two masonry-item all asia col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-block_two-inner">
+							<div class="gallery-block_two-image">
+								<img src="assets/images/destinations/{{destination.img}}" alt="" />
+								<div class="overlay-box_two">
+									<div class="overlay-box_two-inner">
+										<h4><a routerLink="/destination-details/{{destination.id_destination}}">{{destination.nom}}</a></h4>
+										
+										<div class="gallery-block_two-text-two">{{destination.nom}}</div>
+									</div>
+								</div>
+								<div class="overlay-box">
+									<div class="overlay-content">
+										<h3 class="gallery-block_two-title"><a routerLink="/destination-details/{{destination.id_destination}}">{{destination.nom}}</a></h3>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+                </div>
+			</div>
+		</div>
+	</section>
+	<!-- End Gallery Five -->
+
+	<!-- Footer -->
+	<footer class="main-footer">
+		<div class="auto-container">
+			<!-- Upper Box -->
+			<div class="upper-box">
+				<div class="d-flex align-items-center justify-content-between flex-wrap">
+					<div class="footer-logo"><a href="index.html"><img src="assets/images/logo.svg" alt="" title=""></a></div>
+					<ul class="footer-nav">
+						<li><a href="#">Destinations</a></li>
+						<li><a href="#">Tours</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					<!-- Social Box -->
+					<div class="footer-social_box">
+						<a href="https://facebook.com/" class="fab fa-facebook fa-fw"></a>
+						<a href="https://twitter.com/" class="fab fa-twitter-square fa-fw"></a>
+						<a href="https://instagram.com/" class="fab fa-instagram fa-fw"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<div class="d-flex align-items-center justify-content-between flex-wrap">
+					<div class="copyright">Copyright &copy; 2023 Vacasky. All rights reserved.</div>
+					<ul class="footer-bottom_nav">
+						<li><a href="#">Privacy policy</a></li>
+						<li><a href="#">Terms & Condition</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+</div>
+<!-- End PageWrapper -->
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top"><span class="fas fa-arrow-up fa-fw"></span></div>
+
+
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</body>
+
+<!-- Mirrored from wpthemebooster.com/demo/themeforest/html/vacasky/destination.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 Apr 2024 10:14:19 GMT -->
