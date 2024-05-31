@@ -46,11 +46,12 @@
 				<div class="gallery-search_box">
 					<!-- Search Box -->
 					<div class="search-box mb-0">
-						
+						<form [formGroup]="searchForm">
 							<div class="form-group">
-								<input type="search" name="search-field" value="" placeholder="Search..." required>
-								<button (click)="loadDestinations()"><span class="icon fa fa-search"></span></button>
+								<input formControlName="nom" type="search" name="search-field" value="" placeholder="Search..." required>
+								<button (click)="search()"><span class="icon fa fa-search"></span></button>
 							</div>
+						</form>
 						
 					</div>
 				</div>

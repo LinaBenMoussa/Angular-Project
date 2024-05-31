@@ -6,6 +6,7 @@ import { PhotoService } from '../services/photo.service';
 import { Photo } from '../Models/Photo.model';
 import { ChambreService } from '../services/chambre.service';
 import { Chambre } from '../Models/Chambre.model';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-hotel-details',
@@ -28,7 +29,7 @@ export class HotelDetailsComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private photoservice: PhotoService,
     private chambreservice:ChambreService,
-    private router: Router
+    private router: Router,private session:SessionService
   ) { }
 
   ngOnInit() {
@@ -57,9 +58,11 @@ export class HotelDetailsComponent implements OnInit {
   }
 
   goToBooking(idhotel: number,id_chambre:number) {
-    if(sessionStorage.getItem('user')!=null){
-      this.router.navigate(['/booking', idhotel,id_chambre]);
+    if(this.session.getUserName()){
+       this.router.navigate(['/booking', idhotel,id_chambre]);
+    }else{
+      this.router.navigate(['/login']); 
     }
-    this.router.navigate(['/login']); 
+   
 }
 }

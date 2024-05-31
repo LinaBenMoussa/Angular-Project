@@ -38,4 +38,9 @@ export class DestinationService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
+  searchByNom(nom: string): Observable<Destination[]> {
+    const url = `${this.apiUrl}/SearchByNom?nom=${nom}`;
+    return this.http.get<Destination[]>(url);
+  }
+
 }
