@@ -5,6 +5,7 @@ import { Client } from '../Models/Client.model';
 
 import { AuthService } from '../services/authenticate.service';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -40,33 +41,38 @@ export class SignupComponent implements OnInit {
       };
       console.log("le compte est",compte)
 
+      
+      
       // Appelez la méthode du service AuthService pour enregistrer le compte
-      this.authService.registerCompte(compte).subscribe(
-        (response) => {
+      this.authService.registerCompte(compte).pipe(
+        switchMap((response: { id_compte: any; }) => {
           const idCompte = response.id_compte;
-          console.log("response est ",idCompte); // Gérez la réponse du backend ici
-          const client : Client={
+          console.log("response est ", idCompte); // Gérez la réponse du backend ici
+      
+          const client: Client = {
             id_client: 0,
             name: this.signupForm.value.fName,
             prenom: this.signupForm.value.uName,
             dateNaissance: new Date(),
             telephone: parseInt(this.signupForm.value.phone, 10),
             id_compte: idCompte
-          }
-          console.log("client est",client)
-          this.authService.registerClient(client).subscribe(
-            (response) => {
-              console.log("la reponse est ",response); // Gérez la réponse du backend ici
-              this.router.navigate(['/login']);
-              this.signupForm.reset();
-            }
-          )
+          };
+          console.log("client est", client);
+      
+          // Retournez l'observable de registerClient pour le prochain switchMap
+          return this.authService.registerClient(client);
+        })
+      ).subscribe(
+        (response) => {
+          console.log("la reponse est ", response); // Gérez la réponse du backend ici
+          this.router.navigate(['/login']);
           this.signupForm.reset();
         },
         (error) => {
           console.error(error); // Gérez les erreurs ici
         }
       );
+      
       
 
      

@@ -1,38 +1,24 @@
 <app-header></app-header>
 <div class="page-wrapper">
-
-
-
     <!-- Main Header -->
-
-    <!-- Sticky/Fixed Nav -->
     <div class="fixed_menu w-100">
         <header class="header header_style_one"></header>
     </div>
-
     <!-- Mobile Responsive Menu -->
     <div class="mr_menu d-lg-none">
-
         <button type="button" class="mr_menu_close"><i class="fa fa-times"></i></button>
-        <div class="logo"></div> <!-- Keep this div empty. Logo will come here by JavaScript -->
-        <div class="mr_navmenu"></div> <!-- Keep this div empty. Menu will come here by JavaScript -->
+        <div class="logo"></div>
+        <div class="mr_navmenu"></div>
     </div>
     <!-- End Main Header -->
 
     <!-- Page Banner -->
-    <section  class="page-banner" margin-top:20px style="background-image: url(/assets/images/background/16.jpg)">
+    <section class="page-banner" margin-top:20px style="background-image: url(/assets/images/background/16.jpg)">
         <div class="auto-container">
-            <!-- <ul class="page-breadbrumbs">
-				<li><a href="#">Home</a></li>
-				<li>Hotel Booking</li>
-			</ul> -->
-            <h1 style="margin-top: 20%; font-size: 80px;"  class="page-banner_title">Review Your Booking</h1>
+            <h1 style="margin-top: 20%; font-size: 80px;" class="page-banner_title">Review Your Booking</h1>
         </div>
     </section>
     <!-- End Page Banner -->
-
-
-
 
     <!-- Tour Detail Two -->
     <section class="tour-detail-two">
@@ -50,23 +36,14 @@
                                     <ul>
                                         <li class="d-flex align-items-center justify-content-between mb-2"><span>Room
                                                 Charge</span> <span>$ {{Chambre.prix}}</span></li>
-                                        <li class="d-flex align-items-center justify-content-between mb-2">
-                                            <!-- <span>Discount <span class="badge bg-success">10%</span></span> <span> - $
-                                                130</span></li> -->
-                                        <!-- <li class="d-flex align-items-center justify-content-between mb-2"><span>Tax
-                                                <span class="badge bg-danger">5%</span> </span> <span>$ 65</span></li> -->
                                     </ul>
-                                </div>
-                                <div class="card-footer bg-transparent">
-                                    <!-- <h5 class="d-flex align-items-center justify-content-between"><span>Total
-                                            Payable</span> <span>$ 1235</span></h5> -->
                                 </div>
                             </div>
 
-                            <!-- Cancellation Ploicy  -->
+                            <!-- Cancellation Policy  -->
                             <div class="card mt-4">
                                 <div class="card-header">
-                                    <h5>Cancellation Ploicy</h5>
+                                    <h5>Cancellation Policy</h5>
                                 </div>
                                 <div class="card-body">
                                     <ul>
@@ -85,7 +62,6 @@
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-12">
-
                         <div class="booking-form-block active">
                             <!-- Room Details -->
                             <div class="card">
@@ -103,7 +79,6 @@
                                             <p class="mb-2"><i class="fas fa-map-marker-alt fa-fw"></i> {{Hotel.localisation}}</p>
                                             <div class="room-rating">
                                                 <span *ngFor="let i of [].constructor(Hotel.categorie)" class="fa fa-star"></span>
-                                               
                                             </div>
                                             <ul class="room-facilities flex-wrap flex-xl-nowrap">
                                                 <li>Free Wi-Fi</li>
@@ -134,34 +109,21 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-
-
-                                                 <td>
-
+                                                <td>
                                                     <input type="date" id="start" [(ngModel)]="startDate" name="trip-start" min="minDateStartDate" />
-
-
                                                 </td>
                                                 <td>
-                                                    <input type="date" id="end" [(ngModel)]="endDate" name="trip-end"
-                                                        min="minDateEndDate" />
-
+                                                    <input type="date" id="end" [(ngModel)]="endDate" name="trip-end" min="minDateEndDate" />
                                                 </td>
                                                 <td>
-
                                                     <select class="select-location" id="room" required>
-                                                        <option [value]="0" [selected]="true">Select
-                                                        </option>
-                                                        <option *ngFor="let room of roomList" [value]="room.roomNumber">
-                                                            {{ room}}
-                                                        </option>
+                                                        <option [value]="0" [selected]="true">Select</option>
+                                                        <option *ngFor="let room of roomList" [value]="room.roomNumber">{{ room }}</option>
                                                     </select>
                                                 </td>
                                                 <td>
                                                     <input type="number" class="form-control" value="0" />
                                                 </td>
-
-
                                             </tr>
                                         </tbody>
                                     </table>
@@ -184,55 +146,36 @@
                                 <div class="card-header">
                                     <h5>Client Details</h5>
                                 </div>
-
                                 <div class="card-body">
                                     <!-- Booking Form -->
                                     <div class="booking-form">
                                         <div class="row">
-                                            <!-- <div class="col-lg-2">
-
-                                                <div class="form-group">
-                                                    <label class="form-label">Title</label>
-                                                    <select class="custom-select-box select-default px-3">
-                                                        <option>Mrs</option>
-                                                        <option>Mr</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
-
                                             <div class="col-lg-6">
                                                 <!-- Form Group -->
                                                 <div class="form-group">
                                                     <label class="form-label"><b>First Name</b></label>
                                                     <span>{{nom}}</span>
-                                                    <!-- <input type="text" name="f-name" placeholder="First Name" required> -->
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-6">
                                                 <!-- Form Group -->
                                                 <div class="form-group">
                                                     <label class="form-label"><b>Last Name</b></label>
                                                     <span>{{prenom}}</span>
-                                                    <!-- <input type="text" name="l-name" placeholder="Last Name" required> -->
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-6">
                                                 <!-- Form Group -->
                                                 <div class="form-group mb-0">
                                                     <label class="form-label"><b>Email Address</b></label>
                                                     <span>{{email}}</span>
-                                                    <!-- <input type="email" name="email" placeholder="Email Address" required> -->
                                                 </div>
                                             </div>
-
                                             <div class="col-lg-6">
                                                 <!-- Form Group -->
                                                 <div class="form-group mb-0">
                                                     <label class="form-label"><b>Phone Number</b></label>
                                                     <span>{{phone}}</span>
-                                                    <!-- <input type="number" name="phone" placeholder="Phone Number" required> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -248,28 +191,36 @@
                                     </span>
                                 </button>
 
-                                <button  (click)="navigate()" 
-                                    class="btn-style-two theme-btn" id="donation_next">
+                                <button (click)="navigate()" class="btn-style-two theme-btn" id="donation_next">
                                     <span class="btn-wrap">
                                         <span class="text-one">Book</span>
                                         <span class="text-two">Book</span>
                                     </span>
                                 </button>
-                                <div *ngIf="modalOpen" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close" (click)="closeModal()">&times;</span>
-                                        <p>{{ modalText }}</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </form>
         </div>
     </section>
     <!-- End Tour Detail Two -->
+
+    <!-- Modal for Alerts -->
+    <div *ngIf="modalOpen" class="modal">
+        <div class="modal-content">
+          <span class="close" (click)="closeModal()">&times;</span>
+          <h3>Booking Success</h3>
+          <p>Your reservation has been created successfully!</p>
+          <div>
+            <h4>Reservation Details:</h4>
+            <p><strong>Client ID:</strong> {{ reservation.id_client }}</p>
+            <p><strong>Check-In Date:</strong> {{ reservation.dateDebut | date }}</p>
+            <p><strong>Check-Out Date:</strong> {{ reservation.dateFin | date }}</p>
+            <p><strong>Room ID:</strong> {{ reservation.id_chambre }}</p>
+          </div>
+        </div>
+      </div>
 
     <!-- Footer -->
     <footer class="main-footer">
@@ -304,7 +255,6 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
     </footer>
+</div>
