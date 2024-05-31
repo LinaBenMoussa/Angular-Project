@@ -33,7 +33,11 @@ export class HotelBookingComponent implements OnInit {
   prenom!:String;
   email:string|null = null;
   phone!:number;
-  constructor(  private route: ActivatedRoute,private session: SessionService,private router: Router,private reservationService: ReservationService,private CS:HotelService,private CC:ChambreService,private clientService:ClientService) {
+  constructor(private router: Router,
+      private route: ActivatedRoute,private session: SessionService
+      ,private reservationService: ReservationService,
+      private CS:HotelService,private CC:ChambreService,
+      private clientService:ClientService) {
    this.email=this.session.getUserName();
   }
   ngOnInit(): void {
@@ -53,7 +57,11 @@ export class HotelBookingComponent implements OnInit {
       this.nom = client.name;
       this.prenom = client.prenom;
       this.phone = client.telephone;
+      console.log(client);
+      this.session.setUserId(client.id_client.toString());
+      
     })
+
   }
   onNextClick(event: Event): void {
     event.preventDefault();
@@ -79,7 +87,34 @@ export class HotelBookingComponent implements OnInit {
 
     this.tabcount -= 1;
   }
+  navigate() {
+    console.log(this.session.getUserId());
+    
+    this.reservation = {
+      id_client: +(this.session.getUserId() ?? '0'),
+      dateDebut: this.startDate,
+      dateFin: this.endDate,
+      id_chambre: this.Chambre.id_chambre,
+    } as Reservation;
 
+    console.log("reservation:", this.reservation);
+
+    this.reservationService.createReservation(this.reservation).subscribe(
+      (data: Reservation) => {
+        this.reservation = data;
+        this.showSuccessAlert();
+      },
+      (error) => {
+        console.log('Erreur lors du chargement de reservation :', error);
+        // Handle the error appropriately
+      }
+    );
+  }
+
+  showSuccessAlert() {
+    this.modalOpen = true;
+  }
+ 
 createReservation(){
   let reservation= {
     id_client: +(this.session.getUserId()??'0'),
@@ -116,8 +151,8 @@ afterCloseModal() {
   this.router.navigate(['/reservations']);
 
 }
-}
 
+}
 
 
 
