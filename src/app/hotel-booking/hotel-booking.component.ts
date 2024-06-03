@@ -120,7 +120,7 @@ createReservation(){
     id_client: +(this.session.getUserId()??'0'),
     dateDebut: this.startDate,
     dateFin: this.endDate,
-    id_chambre: 2 
+    id_chambre: this.Chambre.id_chambre,
   } as Reservation;
   this.openModal();
   this.reservationService.createReservation(reservation).subscribe(
