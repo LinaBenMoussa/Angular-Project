@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'reservations', component: ReservationListComponent },
 
   { path: 'login', component: LoginComponent },
-  
+
 
   { path: 'signup', component: SignupComponent },
   { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
@@ -50,6 +50,7 @@ const routes: Routes = [
   { path: 'edit-chambre/:idchambre', component: EditChambreComponent },
 
   { path: 'add-hotel', component: AddHotelComponent },
+  { path: 'destinations', component: DestinationComponent },
 
   { path: 'hotelDetails/:idHotel', component: HotelDetailsComponent },
   { path: 'dashboard', component: DashboardComponent },

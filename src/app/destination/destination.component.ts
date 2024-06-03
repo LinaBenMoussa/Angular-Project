@@ -42,7 +42,7 @@ export class DestinationComponent implements OnInit {
       (destinations: Destination[]) => {
         this.destinations = destinations;
       },
-      (error) => {
+      (error: any) => {
         console.log('Erreur lors de la recherche des destinations :', error);
       }
     );

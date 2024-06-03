@@ -9,7 +9,7 @@ import { Destination } from '../Models/Destination.model';
 export class DestinationService {
   private apiUrl = 'https://localhost:44326/api/destinations'; // URL de votre API
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Méthode pour récupérer toutes les destinations depuis l'API
   getDestinations(): Observable<Destination[]> {
@@ -40,5 +40,8 @@ export class DestinationService {
   }
   getTotalDestinations(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/total`);
+  }
+  searchByNom(nom: string): Observable<Destination[]> {
+    return this.http.get<Destination[]>(`${this.apiUrl}/SearchByNom/${nom}`);
   }
 }
