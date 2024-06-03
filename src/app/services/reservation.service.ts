@@ -3,7 +3,7 @@ import { Reservation } from '../Models/Reservation.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
- 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,5 +13,8 @@ export class ReservationService {
   constructor(private http: HttpClient) {}
    createReservation(reservation: Reservation): Observable<Reservation> {
     return this.http.post<Reservation>(this.apiUrl , reservation);
+  }
+  getTotalReservations(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total`);
   }
 }

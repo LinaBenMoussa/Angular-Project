@@ -7,7 +7,7 @@ import { Chambre } from '../Models/Chambre.model'; // Assurez-vous d'importer vo
   providedIn: 'root'
 })
 export class ChambreService {
-  private baseUrl = 'https://localhost:44326/api/Chambres'; 
+  private baseUrl = 'https://localhost:44326/api/Chambres';
 
   constructor(private http: HttpClient) { }
 
@@ -31,5 +31,8 @@ export class ChambreService {
 
   deleteChambre(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+  getTotalChambres(): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/total`);
   }
 }

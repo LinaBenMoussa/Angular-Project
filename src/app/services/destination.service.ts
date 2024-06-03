@@ -38,4 +38,7 @@ export class DestinationService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
+  getTotalDestinations(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total`);
+  }
 }

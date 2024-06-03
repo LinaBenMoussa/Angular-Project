@@ -32,4 +32,7 @@ export class ClientService {
   deleteClient(id: number): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/${id}`);
   }
+  getTotalClients(): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/total`);
+  }
 }

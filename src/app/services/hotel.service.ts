@@ -8,39 +8,45 @@ import { FilterSearch } from '../Models/FilterSearch.model';
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'https://localhost:44326/api/hotels'; // URL de votre API pour les hôtels
+  private apiUrl = 'https://localhost:44326/api/hotels'; // Your API URL for hotels
 
   constructor(private http: HttpClient) {}
 
-  // Méthode pour récupérer tous les hôtels depuis l'API
+  // Method to get all hotels from the API
   getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.apiUrl);
   }
 
-  // Méthode pour récupérer un hôtel par son ID depuis l'API
+  // Method to get a hotel by its ID from the API
   getHotelById(id: number): Observable<Hotel> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Hotel>(url);
   }
 
-  // Méthode pour ajouter un nouvel hôtel à l'API
+  // Method to add a new hotel to the API
   addHotel(hotel: Hotel): Observable<Hotel> {
     return this.http.post<Hotel>(this.apiUrl, hotel);
   }
 
-  // Méthode pour mettre à jour un hôtel existant dans l'API
+  // Method to update an existing hotel in the API
   updateHotel(hotel: Hotel): Observable<Hotel> {
     const url = `${this.apiUrl}/${hotel.id_hotel}`;
     return this.http.put<Hotel>(url, hotel);
   }
 
-  // Méthode pour supprimer un hôtel de l'API par son ID
+  // Method to delete a hotel from the API by its ID
   deleteHotel(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
 
+  // Method to search hotels based on filters
   searchHotels(filter: FilterSearch): Observable<Hotel[]> {
-    return this.http.post<Hotel[]>(this.apiUrl + '/search', filter);
+    return this.http.post<Hotel[]>(`${this.apiUrl}/search`, filter);
+  }
+
+  // Method to fetch total number of hotels from the API
+  getTotalHotels(): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/total`);
   }
 }
