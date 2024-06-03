@@ -33,6 +33,8 @@ import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.compo
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DestinationComponent } from './destination/destination.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { EditMesReservationsComponent } from './edit-mes-reservations/edit-mes-reservations.component';
 
 @NgModule({
   declarations: [ListDestinationComponent,AddChambreComponent,ListeChambreComponent,
@@ -58,6 +60,10 @@ import { DestinationComponent } from './destination/destination.component';
      AddHotelComponent,
      EditChambreComponent,
      DestinationComponent,
+     ReservationListComponent,
+     EditMesReservationsComponent,
+   
+     
   ],
   imports: [MatSelectModule,MatInputModule,MatFormFieldModule,
     BrowserModule,

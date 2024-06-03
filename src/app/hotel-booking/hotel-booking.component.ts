@@ -145,11 +145,13 @@ openModal() {
 
 closeModal() {
   this.modalOpen = false;
-  this.router.navigate(['/home']); 
+  this.afterCloseModal();
+}
+
+afterCloseModal() {
+  this.router.navigate(['/reservations']);
 }
 
 }
-
-
 
 

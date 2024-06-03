@@ -18,15 +18,17 @@ import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.compo
 import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 import { DestinationComponent } from './destination/destination.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'hotels', component: HotelsComponent },
   { path: 'destinations', component: DestinationComponent },
-
+  { path: 'reservations', component: ReservationListComponent },
   { path: 'login', component: LoginComponent },
   
+
   { path: 'signup', component: SignupComponent },
   { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
   { path: 'images/:idhotel', component: ListeImageHotelComponent },

@@ -1,0 +1,13 @@
+<!-- reservation-list.component.html -->
+<div class="container">
+  <h2>Mes Réservations</h2>
+  <ul class="reservations-list">
+    <li *ngFor="let reservation of reservations" class="reservation-item">
+      <div class="reservation-details">
+        <span class="reservation-id">Chambre ID: {{ reservation.id_chambre }}</span>
+        <span class="reservation-dates">Début: {{ reservation.dateDebut }} - Fin: {{ reservation.dateFin }}</span>
+        <button class="edit-button" (click)="editReservation(reservation)">Éditer</button>
+      </div>
+    </li>
+  </ul>
+</div>
