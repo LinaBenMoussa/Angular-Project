@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DestinationService } from 'src/app/services/destination.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-destination',
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
 export class AddDestinationComponent {
   destinationForm: FormGroup;
 
-  constructor(private router: Router,private fb: FormBuilder, private DS:DestinationService) {
+  constructor(private fb: FormBuilder, private DS:DestinationService) {
     this.destinationForm = this.fb.group({
       nom: ['', Validators.required],
       img: [null, Validators.required]
@@ -37,7 +36,5 @@ export class AddDestinationComponent {
       next: (response) => console.log('Upload successful', response),
       error: (error) => console.error('Upload failed', error)
     });
-    this.router.navigate(['/list-destination']); 
-
   }
 }

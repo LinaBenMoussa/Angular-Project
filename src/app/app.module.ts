@@ -59,18 +59,20 @@ import { EditMesReservationsComponent } from './edit-mes-reservations/edit-mes-r
      EditHotelComponent,
      AddHotelComponent,
      EditChambreComponent,
+
      DestinationComponent,
      ReservationListComponent,
      EditMesReservationsComponent,
    
      
+
   ],
   imports: [MatSelectModule,MatInputModule,MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule, MatIconModule,MatSnackBarModule
+    MatButtonModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

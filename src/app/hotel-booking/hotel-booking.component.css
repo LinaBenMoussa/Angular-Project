@@ -1,28 +1,26 @@
+/* Style de la modal */
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Style du contenu de la modal */
 .modal-content {
-  background-color: #fff;
+  background-color: #fefefe;
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 600px;
-  margin: auto;
-  border-radius: 10px;
-  text-align: center;
 }
 
+/* Style pour le bouton de fermeture */
 .close {
   color: #aaa;
   float: right;
@@ -36,7 +34,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-
 .page-banner_title{
   margin-top: -5px;
 }
