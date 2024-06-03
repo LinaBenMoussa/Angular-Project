@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SessionService {
-  private userIdKey = 'userId';
-  private userNameKey = 'username';
-  private roleKey = 'role';
+  private userIdKey = 'null';
+  private userNameKey = 'null';
+  private roleKey = 'null';
 
   constructor() { }
 
