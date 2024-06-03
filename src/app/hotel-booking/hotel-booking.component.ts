@@ -143,17 +143,13 @@ openModal() {
 
 closeModal() {
   this.modalOpen = false;
-
   this.afterCloseModal();
 }
 
 afterCloseModal() {
   this.router.navigate(['/reservations']);
-
 }
 
 }
-
-
 
 

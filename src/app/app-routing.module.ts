@@ -21,8 +21,6 @@ import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.componen
 import { DestinationComponent } from './destination/destination.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
-
-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
