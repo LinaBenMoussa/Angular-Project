@@ -17,8 +17,8 @@ import { ListeImageHotelComponent } from './admin/liste-image-hotel/liste-image-
 import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.component';
 import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
-
 import { DestinationComponent } from './destination/destination.component';
+import { DashboardadminComponent } from './dashboardadmin/dashboardadmin.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 const routes: Routes = [
@@ -31,7 +31,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
 
-
+  { path: 'd', component: DashboardadminComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
   { path: 'images/:idhotel', component: ListeImageHotelComponent },

@@ -4,6 +4,9 @@ import { ClientService } from 'src/app/services/client.service';
 import { ChambreService } from 'src/app/services/chambre.service';
 import { DestinationService } from 'src/app/services/destination.service';
 import { ReservationService } from 'src/app/services/reservation.service';
+import { Hotel } from 'src/app/Models/Hotel.model';
+import { Chambre } from 'src/app/Models/Chambre.model';
+import { ChartOptions, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +14,33 @@ import { ReservationService } from 'src/app/services/reservation.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  hotels: Hotel[] = [];
   showHeaderAndFooter: boolean = false;
   totalReservations: number = 0;
   totalDestinations: number = 0;
   totalHotels: number = 0;
   totalClients: number = 0;
   totalChambres: number = 0;
-  constructor(private hotelService: HotelService,private clientService: ClientService,private chambreService: ChambreService,private destinationService: DestinationService,
+
+  // Properties for chart
+  lineChartData: any[] = [{ data: [], label: 'Nombre de Chambres' }];
+  lineChartLabels: string[] = [];
+
+
+  lineChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
+  lineChartType: ChartType = 'line';
+
+  lineChartLegend = true;
+
+
+  constructor(
+    private hotelService: HotelService,
+    private clientService: ClientService,
+    private chambreService: ChambreService,
+    private destinationService: DestinationService,
     private reservationService: ReservationService
   ) {}
 
@@ -27,6 +50,7 @@ export class DashboardComponent implements OnInit {
     this.loadChambreStatistics();
     this.loadDestinationStatistics();
     this.loadReservationStatistics();
+    this.loadHotelChambreStatistics();
   }
 
   loadHotelStatistics(): void {
@@ -39,6 +63,7 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
   loadClientStatistics(): void {
     this.clientService.getTotalClients().subscribe(
       (data: number) => {
@@ -49,6 +74,7 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
   loadChambreStatistics(): void {
     this.chambreService.getTotalChambres().subscribe(
       (data: number) => {
@@ -59,6 +85,7 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
   loadDestinationStatistics(): void {
     this.destinationService.getTotalDestinations().subscribe(
       (data: number) => {
@@ -69,6 +96,7 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
   loadReservationStatistics(): void {
     this.reservationService.getTotalReservations().subscribe(
       (data: number) => {
@@ -79,4 +107,15 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+  loadHotelChambreStatistics(): void {
+    this.hotelService.getHotels().subscribe((hotels: Hotel[]) => {
+      this.lineChartData[0].data = [];
+      this.lineChartLabels = [];
+      hotels.forEach((hotel) => {
+        this.lineChartLabels.push(hotel.nom);
+        this.lineChartData[0].data.push(hotel.nom.length);
+      });
+    });
+  }
+
 }
