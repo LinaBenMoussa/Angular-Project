@@ -36,7 +36,8 @@ import { DestinationComponent } from './destination/destination.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import { EditMesReservationsComponent } from './edit-mes-reservations/edit-mes-reservations.component';
 import { NgChartsModule } from 'ng2-charts';
-import { ReservationadminComponent } from './admin/reservationadmin/reservationadmin.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
+import { ReservationadminComponent } from './reservationadmin/reservationadmin.component';
 
 @NgModule({
   declarations: [ListDestinationComponent,AddChambreComponent,ListeChambreComponent,
@@ -74,7 +75,7 @@ import { ReservationadminComponent } from './admin/reservationadmin/reservationa
     AppRoutingModule,HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule, MatIconModule,NgChartsModule
+    MatButtonModule, MatIconModule,NgChartsModule,NgxFileDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

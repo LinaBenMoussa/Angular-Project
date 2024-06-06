@@ -19,7 +19,7 @@ import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 import { DestinationComponent } from './destination/destination.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
-import { ReservationadminComponent } from './admin/reservationadmin/reservationadmin.component';
+import { ReservationadminComponent } from './reservationadmin/reservationadmin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },

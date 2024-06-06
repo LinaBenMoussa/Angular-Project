@@ -15,7 +15,7 @@ export class ListeImageHotelComponent implements OnInit {
   photos!:  Photo[] 
   hotels: { [idHotel: number]: string } = {};
   idhotel = this.route.snapshot.params['idhotel'];
-
+  selectedFile: File | null = null;
   constructor(private route: ActivatedRoute,private photoService: PhotoService, private hotelService: HotelService) { }
   onFileSelect(event: any): void {
     const file = event.target.files[0];
@@ -62,5 +62,27 @@ export class ListeImageHotelComponent implements OnInit {
     this.photoService.deletePhoto(id).subscribe(() => {
       this.getImages();
     });
+  }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    console.log("selected file:", this.selectedFile);
+  }
+
+  async onUpload(): Promise<void> {
+    if (this.selectedFile) {
+      this.photoService.uploadPhoto(this.selectedFile, this.idhotel).subscribe(
+        (response) => {
+          console.log('Photo uploaded successfully', response);
+          this.getImages();
+          this.loadHotels();
+          
+        },
+        (error) => {
+          console.error('Error uploading photo', error);
+        }
+      );
+    } else {
+      console.error('No file selected');
+    }
   }
 }

@@ -19,9 +19,11 @@
         </div>
       </div>
       <div class=" col-md-3 mb-2" style="margin-top: 100px; margin-left: 100px;">
-        <button class="btn btn-primary" (click)="fileInput.click()">Add picture</button>
-        <input type="file" #fileInput style="display: none;" (change)="onFileSelect($event)">
-      </div>
+        
+          <input type="file" class="form-control" (change)="onFileSelected($event)" /><br>
+          <button class="btn btn-primary" (click)="onUpload()">Upload Photo</button>
+        
+         </div>
     </div>
   </div>
 </div>

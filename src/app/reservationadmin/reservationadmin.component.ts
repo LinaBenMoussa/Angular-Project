@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {  OnInit } from '@angular/core';
-import { ReservationService } from '../../services/reservation.service';
-import { Reservation } from '../../Models/Reservation.model';
+import { ReservationService } from '../services/reservation.service';
+import { Reservation } from '../Models/Reservation.model';
 @Component({
   selector: 'app-reservationadmin',
   templateUrl: './reservationadmin.component.html',
