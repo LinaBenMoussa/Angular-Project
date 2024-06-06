@@ -18,8 +18,8 @@ declare var $: any; // Déclaration pour utiliser jQuery dans un composant Angul
 export class HotelBookingComponent implements OnInit {
   currentStep: number = 0;
   tabcount: number = 0;
-  startDate: Date|null = null;
-  endDate: Date|null = null; 
+  startDate: Date | null = null;
+  endDate: Date | null = null;
   reservation: Reservation = {} as Reservation;
   events: string[] = [];
   minDateStartDate: string = new Date().toLocaleDateString('fr-ca');
@@ -29,17 +29,19 @@ export class HotelBookingComponent implements OnInit {
   roomList: any[] = ['1', '2', '3'];
   Hotel: Hotel = {} as Hotel;
   Chambre: Chambre = {} as Chambre;
-  nom!:String;
-  prenom!:String;
-  email:string|null = null;
-  phone!:number;
+  nom!: String;
+  prenom!: String;
+  email: string | null = null;
+  phone!: number;
+
   constructor(private router: Router,
-      private route: ActivatedRoute,private session: SessionService
-      ,private reservationService: ReservationService,
-      private CS:HotelService,private CC:ChambreService,
-      private clientService:ClientService) {
-   this.email=this.session.getUserName();
+    private route: ActivatedRoute, private session: SessionService,
+    private reservationService: ReservationService,
+    private CS: HotelService, private CC: ChambreService,
+    private clientService: ClientService) {
+    this.email = this.session.getUserName();
   }
+
   ngOnInit(): void {
     $('#donation_next').on('click', (e: Event) => this.onNextClick(e));
     $('#donation_back').on('click', (e: Event) => this.onBackPressed(e));
@@ -51,7 +53,7 @@ export class HotelBookingComponent implements OnInit {
     });
     this.CC.getChambreById(idChambre).subscribe(chambre => {
       this.Chambre = chambre;
-      console.log("chambre:",this.Chambre);
+      console.log("chambre:", this.Chambre);
     })
     this.clientService.getClientByIdCompte(this.session.getUserId()).subscribe(client => {
       this.nom = client.name;
@@ -59,10 +61,9 @@ export class HotelBookingComponent implements OnInit {
       this.phone = client.telephone;
       console.log(client);
       this.session.setUserId(client.id_client.toString());
-      
     })
-
   }
+
   onNextClick(event: Event): void {
     event.preventDefault();
 
@@ -75,7 +76,6 @@ export class HotelBookingComponent implements OnInit {
     this.tabcount += 1;
   }
 
-
   onBackPressed(event: Event): void {
     event.preventDefault();
 
@@ -87,69 +87,51 @@ export class HotelBookingComponent implements OnInit {
 
     this.tabcount -= 1;
   }
-  navigate() {
-    console.log(this.session.getUserId());
-    
-    this.reservation = {
-      id_client: +(this.session.getUserId() ?? '0'),
-      dateDebut: this.startDate,
-      dateFin: this.endDate,
-      id_chambre: this.Chambre.id_chambre,
-    } as Reservation;
 
-    console.log("reservation:", this.reservation);
-
-    this.reservationService.createReservation(this.reservation).subscribe(
-      (data: Reservation) => {
-        this.reservation = data;
-        this.showSuccessAlert();
-      },
-      (error) => {
-        console.log('Erreur lors du chargement de reservation :', error);
-        // Handle the error appropriately
-      }
-    );
+  createReservation() {
+    if (this.startDate && this.endDate) {
+      const startDate = new Date(this.startDate);
+      const endDate = new Date(this.endDate);
+  
+      this.reservationService.checkAvailability(this.Chambre.id_chambre, startDate, endDate)
+        .subscribe(isAvailable => {
+          if (isAvailable) {
+            let reservation = {
+              id_client: +(this.session.getUserId() ?? '0'),
+              dateDebut: startDate,
+              dateFin: endDate,
+              id_chambre: this.Chambre.id_chambre,
+            } as Reservation;
+            this.openModal();
+            this.reservationService.createReservation(reservation).subscribe(
+              (data: Reservation) => {
+                this.reservation = data;
+                this.startDate = null;
+                this.endDate = null;
+                this.openModal();
+              },
+              (error) => {
+                console.log('Erreur lors du chargement de reservation :', error);
+              }
+            );
+          } else {
+            alert('La chambre n\'est pas disponible pour les dates sélectionnées.');
+          }
+        });
+    }
   }
+  
 
-  showSuccessAlert() {
+  openModal() {
     this.modalOpen = true;
   }
- 
-createReservation(){
-  let reservation= {
-    id_client: +(this.session.getUserId()??'0'),
-    dateDebut: this.startDate,
-    dateFin: this.endDate,
-    id_chambre: this.Chambre.id_chambre,
-  } as Reservation;
-  this.openModal();
-  this.reservationService.createReservation(reservation).subscribe(
-  (data: Reservation) => {
-    this.reservation = data; 
-    this.startDate = null;
-    this.endDate = null;
-    this.openModal();
-    
-     },
- 
- (error) => {
-   console.log('Erreur lors du chargement de reservation :', error);
- }
 
-);this.openModal();}
-openModal() {
-  this.modalOpen = true;
+  closeModal() {
+    this.modalOpen = false;
+    this.afterCloseModal();
+  }
+
+  afterCloseModal() {
+    this.router.navigate(['/reservations']);
+  }
 }
-
-closeModal() {
-  this.modalOpen = false;
-  this.afterCloseModal();
-}
-
-afterCloseModal() {
-  this.router.navigate(['/reservations']);
-}
-
-}
-
-
