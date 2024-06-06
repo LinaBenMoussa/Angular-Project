@@ -57,6 +57,7 @@ export class HotelDetailsComponent implements OnInit {
   }
 
   goToBooking(idhotel: number,id_chambre:number) {
+    
     this.router.navigate(['/booking', idhotel,id_chambre]); 
 }
 }

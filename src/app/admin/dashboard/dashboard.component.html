@@ -119,6 +119,19 @@
           </canvas>
         </div>
       </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="chart-container mt-4">
+          <h2>Nombre de Réservations par Hôtel</h2>
+          <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="barChartType"
+          ></canvas>
+        </div>
+      </div>
     </div>
   </div>
 </div>

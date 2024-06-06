@@ -17,10 +17,19 @@ export class ReservationService {
 
   getReservationsByUserId(userId: number): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(`${this.apiUrl}/client/${userId}`);
-  
+
   }
-  
+
   getTotalReservations(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/total`);
+  }
+  getAllReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(`${this.apiUrl}/liste`);
+  }
+  deleteReservation(id_reservation: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id_reservation}`);
+  }
+  getReservationsByHotell(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/hotels`);
   }
 }

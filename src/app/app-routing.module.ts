@@ -18,8 +18,8 @@ import { ListeChambreComponent } from './admin/liste-chambre/liste-chambre.compo
 import { AddChambreComponent } from './admin/add-chambre/add-chambre.component';
 import { EditChambreComponent } from './admin/edit-chambre/edit-chambre.component';
 import { DestinationComponent } from './destination/destination.component';
-import { DashboardadminComponent } from './dashboardadmin/dashboardadmin.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { ReservationadminComponent } from './admin/reservationadmin/reservationadmin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -31,7 +31,6 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
 
-  { path: 'd', component: DashboardadminComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'booking/:idhotel/:idchambre', component: HotelBookingComponent },
   { path: 'images/:idhotel', component: ListeImageHotelComponent },
@@ -52,7 +51,10 @@ const routes: Routes = [
 
   { path: 'hotelDetails/:idHotel', component: HotelDetailsComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: 'home' } // Route wildcard pour les URL non reconnues
+  { path: 'listereservations', component: ReservationadminComponent },
+  { path: '**', redirectTo: 'home' } ,
+
+// Route wildcard pour les URL non reconnues
 ];
 
 @NgModule({

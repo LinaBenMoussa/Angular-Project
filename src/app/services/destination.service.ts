@@ -42,6 +42,6 @@ export class DestinationService {
     return this.http.get<number>(`${this.apiUrl}/total`);
   }
   searchByNom(nom: string): Observable<Destination[]> {
-    return this.http.get<Destination[]>(`${this.apiUrl}/SearchByNom/${nom}`);
+    return this.http.get<Destination[]>(`${this.apiUrl}/SearchByNom?nom=${nom}`);
   }
 }

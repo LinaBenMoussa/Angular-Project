@@ -22,19 +22,27 @@ export class DashboardComponent implements OnInit {
   totalClients: number = 0;
   totalChambres: number = 0;
 
-  // Properties for chart
+  // Properties for line chart
   lineChartData: any[] = [{ data: [], label: 'Nombre de Chambres' }];
   lineChartLabels: string[] = [];
-
 
   lineChartOptions: ChartOptions = {
     responsive: true,
   };
 
   lineChartType: ChartType = 'line';
-
   lineChartLegend = true;
 
+  // Properties for bar chart
+  barChartData: any[] = [{ data: [], label: 'Nombre de Réservations' }];
+  barChartLabels: string[] = [];
+
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
 
   constructor(
     private hotelService: HotelService,
@@ -51,6 +59,7 @@ export class DashboardComponent implements OnInit {
     this.loadDestinationStatistics();
     this.loadReservationStatistics();
     this.loadHotelChambreStatistics();
+    this.loadReservationsByHotel();
   }
 
   loadHotelStatistics(): void {
@@ -107,15 +116,28 @@ export class DashboardComponent implements OnInit {
       }
     );
   }
+
   loadHotelChambreStatistics(): void {
     this.hotelService.getHotels().subscribe((hotels: Hotel[]) => {
       this.lineChartData[0].data = [];
       this.lineChartLabels = [];
       hotels.forEach((hotel) => {
         this.lineChartLabels.push(hotel.nom);
-        this.lineChartData[0].data.push(hotel.nom.length);
+        // Replace this with actual chambre count data
+        this.lineChartData[0].data.push(Math.floor(Math.random() * 10)); // Example data (random)
       });
     });
   }
 
+
+  loadReservationsByHotel(): void {
+    this.reservationService.getReservationsByHotell().subscribe((data: any[]) => {
+      this.barChartData[0].data = [];
+      this.barChartLabels = [];
+      data.forEach((item) => {
+        this.barChartLabels.push(item.nom); // Assuming 'nom' is the hotel name property
+        this.barChartData[0].data.push(item.totalReservations);
+      });
+    });
+  }
 }

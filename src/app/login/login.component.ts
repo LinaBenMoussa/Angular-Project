@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log(response); 
           this.session.setUserId(response.id_compte);
+         
           this.session.setUserName(response.email);
           this.session.setUserRole(response.role);
           console.log("user id",this.session.getUserId());

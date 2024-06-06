@@ -17,7 +17,6 @@ export class HotelService {
     return this.http.get<Hotel[]>(this.apiUrl);
   }
 
-  // Method to get a hotel by its ID from the API
   getHotelById(id: number): Observable<Hotel> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Hotel>(url);

@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="main-content">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Liste des Reservations</h2>
+
+    <div *ngIf="reservations.length > 0; else noReservations" class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Client</th>
+            <th>Date Debut</th>
+            <th>Date Fin</th>
+            <th>telephone</th>
+            <th>Chambre</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.client.name }}</td>
+            <td>{{ reservation.dateDebut | date }}</td>
+            <td>{{ reservation.dateFin | date }}</td>
+            <td>{{ reservation.client.telephone }}</td>
+            <td>{{reservation.chambre?.nom  }}</td>
+            <td>
+              <button (click)="deleteReservation(reservation.id_reservation)" class="btn btn-danger btn-sm">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noReservations>
+      <p class="text-center">No reservations found.</p>
+    </ng-template>
+  </div>
+</div>
