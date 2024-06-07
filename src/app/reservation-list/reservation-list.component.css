@@ -102,3 +102,49 @@ h2 {
 .delete-button:hover {
   background-color: #c82333;
 }
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.reservations-table th,
+.reservations-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.reservations-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.reservations-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reservations-table tr:hover {
+  background-color: #f1f1f1;
+}
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #ff4d4d;
+  color: white;
+}
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #ff4d4d;
+  color: white;
+}

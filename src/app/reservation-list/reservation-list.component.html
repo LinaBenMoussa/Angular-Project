@@ -1,26 +1,37 @@
+<!-- reservation-list.component.html -->
+
 <app-header></app-header>
 <div class="page-wrapper">
-    <!-- Main Header -->
-    <div class="fixed_menu w-100">
-        <header class="header header_style_one"></header>
-    </div>
-    <!-- Mobile Responsive Menu -->
-    <div class="mr_menu d-lg-none">
-        <button type="button" class="mr_menu_close"><i class="fa fa-times"></i></button>
-        <div class="logo"></div>
-        <div class="mr_navmenu"></div>
-    </div>
-    <div class="container">
-        <h2>Mes Réservations</h2>
-        <button class="return-button" (click)="goToHotelPage()">Retour à la page Liste des Hôtels</button>
-        <ul class="reservations-list">
-            <li *ngFor="let reservation of reservations" class="reservation-item">
-                <div class="reservation-details">
-
-                    <span class="reservation-dates">Début: {{ reservation.dateDebut }} - Fin: {{ reservation.dateFin }}</span>
+  <!-- Main Header -->
+  <div class="fixed_menu w-100">
+      <header class="header header_style_one"></header>
+  </div>
+  <!-- Mobile Responsive Menu -->
+  <div class="mr_menu d-lg-none">
+      <button type="button" class="mr_menu_close"><i class="fa fa-times"></i></button>
+      <div class="logo"></div>
+      <div class="mr_navmenu"></div>
+  </div>
+  <div class="container">
+      <h2>Mes Réservations</h2>
+      <button class="return-button" (click)="goToHotelPage()">Retour à la page Liste des Hôtels</button>
+      <table class="reservations-table">
+        <thead>
+            <tr>
+                <th>Date de Début</th>
+                <th>Date de Fin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations" class="reservation-item">
+                <td>{{ reservation.dateDebut | date:'short' }}</td>
+                <td>{{ reservation.dateFin | date:'short' }}</td>
+                <td>
                     <button class="delete-button" (click)="deleteReservation(reservation.id_reservation)">Supprimer</button>
-                  </div>
-            </li>
-        </ul>
-    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { ReservationService } from '../services/reservation.service';
 import { Reservation } from '../Models/Reservation.model';
 import { SessionService } from '../services/session.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar'; // importez MatSnackBar
 
 
 @Component({
@@ -44,7 +45,10 @@ export class ReservationListComponent implements OnInit {
     this.router.navigate(['/hotels']); // Adjust the route according to your routing setup
   }
   deleteReservation(id: number) {
+
     this.reservationService.deleteReservation(id).subscribe(() => {
+
+
       // Remove the deleted reservation from the list
       this.reservations = this.reservations.filter(r => r.id_reservation !== id);
     });
