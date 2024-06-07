@@ -16,10 +16,10 @@
         <ul class="reservations-list">
             <li *ngFor="let reservation of reservations" class="reservation-item">
                 <div class="reservation-details">
-                    <span class="reservation-id">Chambre ID: {{ reservation.id_chambre }}</span>
+
                     <span class="reservation-dates">Début: {{ reservation.dateDebut }} - Fin: {{ reservation.dateFin }}</span>
-                    <button class="edit-button" (click)="editReservation(reservation)">Éditer</button>
-                </div>
+                    <button class="delete-button" (click)="deleteReservation(reservation.id_reservation)">Supprimer</button>
+                  </div>
             </li>
         </ul>
     </div>

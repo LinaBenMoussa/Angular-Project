@@ -43,4 +43,10 @@ export class ReservationListComponent implements OnInit {
   goToHotelPage() {
     this.router.navigate(['/hotels']); // Adjust the route according to your routing setup
   }
+  deleteReservation(id: number) {
+    this.reservationService.deleteReservation(id).subscribe(() => {
+      // Remove the deleted reservation from the list
+      this.reservations = this.reservations.filter(r => r.id_reservation !== id);
+    });
+  }
 }

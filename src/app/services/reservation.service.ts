@@ -27,8 +27,9 @@ export class ReservationService {
     return this.http.get<Reservation[]>(`${this.apiUrl}/liste`);
   }
 
-  deleteReservation(id_reservation: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id_reservation}`);
+  deleteReservation(id: number): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 
   getReservationsByHotell(): Observable<any[]> {
@@ -42,5 +43,9 @@ export class ReservationService {
       .set('startDate', startDate.toISOString())
       .set('endDate', endDate.toISOString());
     return this.http.get<boolean>(`${this.apiUrl}/check-availability`, { params });
+  }
+  deletedelete(id: number): Observable<void> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 }
