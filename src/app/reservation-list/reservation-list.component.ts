@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReservationService } from '../services/reservation.service';
 import { Reservation } from '../Models/Reservation.model';
 import { SessionService } from '../services/session.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,11 @@ import { SessionService } from '../services/session.service';
 })
 export class ReservationListComponent implements OnInit {
   reservations: Reservation[]=[];
-  
-  
+
+
   userId: number;
 
-  constructor(private reservationService: ReservationService,private session : SessionService) {
+  constructor(private router: Router,private reservationService: ReservationService,private session : SessionService) {
     // Vous pouvez obtenir le userId à partir d'un service d'authentification ou de session
     this.userId = +(this.session.getUserId()?? '0');
   }
@@ -38,5 +39,8 @@ export class ReservationListComponent implements OnInit {
   editReservation(reservation: any): void {
     // Implémentez la logique pour éditer la réservation ici
     console.log('Edit reservation:', reservation);
+  }
+  goToHotelPage() {
+    this.router.navigate(['/hotels']); // Adjust the route according to your routing setup
   }
 }

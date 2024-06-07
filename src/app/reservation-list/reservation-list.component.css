@@ -1,7 +1,7 @@
 /* reservation-list.component.css */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #f0f0f4;
   margin: 0;
   padding: 20px;
   display: flex;
@@ -10,12 +10,27 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
 }
+.return-button {
 
+display: block;
+margin: 0 auto 20px;
+padding: 10px 20px;
+background-color: #0d5f0c;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+background-color: #0056b3;
+}
 .container {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #4377e0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
