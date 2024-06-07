@@ -6,7 +6,8 @@ import { DestinationService } from 'src/app/services/destination.service';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { Hotel } from 'src/app/Models/Hotel.model';
 import { Chambre } from 'src/app/Models/Chambre.model';
-import { ChartOptions, ChartType } from 'chart.js';
+import {ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import { RoomsPerHotel } from 'src/app/Models/Rooms-per-hotel.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,17 @@ import { ChartOptions, ChartType } from 'chart.js';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  //
+  chartLabels: string[] = [];
+  chartData: ChartDataset[] = [];
+  chartOptions: ChartOptions = {
+    responsive: true,
+  };
+  chartType: ChartType = 'line';
+  chartLegend = true;
+
+  //
   hotels: Hotel[] = [];
   showHeaderAndFooter: boolean = false;
   totalReservations: number = 0;
@@ -60,6 +72,7 @@ export class DashboardComponent implements OnInit {
     this.loadReservationStatistics();
     this.loadHotelChambreStatistics();
     this.loadReservationsByHotel();
+    this.loadRoomsPerHotelData();
   }
 
   loadHotelStatistics(): void {
@@ -138,6 +151,14 @@ export class DashboardComponent implements OnInit {
         this.barChartLabels.push(item.nom); // Assuming 'nom' is the hotel name property
         this.barChartData[0].data.push(item.totalReservations);
       });
+    });
+  }
+  loadRoomsPerHotelData(): void {
+    this.chambreService.getRoomsPerHotel().subscribe((data: RoomsPerHotel[]) => {
+      this.chartLabels = data.map(item => item.hotelName);
+      this.chartData = [
+        { data: data.map(item => item.roomCount), label: 'Nombre de Chambres' }
+      ];
     });
   }
 }

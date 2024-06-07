@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Chambre } from '../Models/Chambre.model'; // Assurez-vous d'importer votre modèle Chambre
-
+import { RoomsPerHotel } from '../Models/Rooms-per-hotel.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,5 +34,8 @@ export class ChambreService {
   }
   getTotalChambres(): Observable<number> {
     return this.http.get<number>(`${this.baseUrl}/total`);
+  }
+  getRoomsPerHotel(): Observable<RoomsPerHotel[]> {
+    return this.http.get<RoomsPerHotel[]>(`${this.baseUrl}/rooms-per-hotel`);
   }
 }
