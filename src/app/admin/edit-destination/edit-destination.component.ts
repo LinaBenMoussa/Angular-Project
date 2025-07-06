@@ -53,7 +53,6 @@ export class EditDestinationComponent {
       );
     } else {
       console.error('Invalid form data or missing destination ID.');
-      // Affichez un message à l'utilisateur pour indiquer que le formulaire est invalide ou que l'ID de l'hôtel est manquant.
     }
   }
   
